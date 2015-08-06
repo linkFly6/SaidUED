@@ -1,6 +1,7 @@
 ﻿$globalBgColor: #fafafa; //#0078d7
-$inputBorderColor: #ccc;
+$inputBorderColor: #999;
 
+$boxOpacity: 0.8;
 
 @mixin btnColor($bgColor: #428bca,$color: #357ebd) {
     /*公用样式*/
@@ -44,7 +45,7 @@ body {
 }
 
 .login-bar-bg {
-    opacity: 0.8;
+    opacity: $boxOpacity;
     background-color: #fff;
     height: 100%;
     width: 100%;
@@ -60,14 +61,19 @@ body {
     input {
         width: 100%;
         padding: 10px;
-        border: 1px solid #e5e5e5;
+        border: 1px solid #b2b2b2;
         border-left: 2px solid #428bca;
+        background-color: transparent;
+        opacity: $boxOpacity;
+        transition: background-color ease-in-out 0.2s;
 
         &:focus, &:hover {
             box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
             border-right-color: $inputBorderColor;
             border-top-color: $inputBorderColor;
             border-bottom-color: $inputBorderColor;
+            background-color: #ebebeb;
+            opacity: 1;
         }
     }
 
@@ -82,9 +88,24 @@ body {
     }
 
     .login-pass {
+        position: relative;
+    }
+
+    .fa-eye {
+        position: absolute;
+        right: 22px;
+        top: 30px;
     }
 
     .pass-input {
+        padding-right: 25px;
+        &::-ms-clear {
+            display: none;
+        }
+
+        &::-ms-reveal {
+            display: none;
+        }
     }
 
     .login-footer {
@@ -103,6 +124,7 @@ body {
         text-decoration: none;
         margin: 0 auto;
         text-align: center;
+        opacity: $boxOpacity;
 
         &:hover, &:focus, &:active {
             @include btnColor(#3071a9,#285e8e);
