@@ -1,0 +1,115 @@
+﻿$globalBgColor: #fafafa; //#0078d7
+$inputBorderColor: #ccc;
+
+
+@mixin btnColor($bgColor: #428bca,$color: #357ebd) {
+    /*公用样式*/
+    background-color: $bgColor;
+    border-color: $color;
+}
+
+
+html {
+    height: 100%;
+}
+
+body {
+    background: $globalBgColor url('../Images/login-bg.jpg') no-repeat;
+    background-size: cover;
+    position: relative;
+    padding-top: 100px;
+    background-position: center center;
+    height: 100%;
+}
+
+.login-content {
+    margin: 0 auto;
+    width: 400px;
+}
+
+.login-header {
+    padding-bottom: 20px;
+}
+
+.said-logo {
+    background: url('../Images/said-logo.png') no-repeat;
+    height: 100px;
+    width: 100px;
+    /*border: 1px solid #fff;*/
+    margin: 0 auto;
+}
+
+.login-box {
+    position: relative;
+}
+
+.login-bar-bg {
+    opacity: 0.8;
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+.login-context {
+    z-index: 2;
+    position: relative;
+    padding: 5px 5px 20px;
+
+    input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #e5e5e5;
+        border-left: 2px solid #428bca;
+
+        &:focus, &:hover {
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+            border-right-color: $inputBorderColor;
+            border-top-color: $inputBorderColor;
+            border-bottom-color: $inputBorderColor;
+        }
+    }
+
+    .login-input {
+        padding: 15px;
+    }
+
+    .login-name {
+    }
+
+    .name-input {
+    }
+
+    .login-pass {
+    }
+
+    .pass-input {
+    }
+
+    .login-footer {
+        width: 100%;
+    }
+
+    .login-btn {
+        @include btnColor();
+        color: #fff;
+        width: 200px;
+        font-size: 18px;
+        line-height: 1.33;
+        display: block;
+        padding: 10px 16px;
+        border-radius: 6px;
+        text-decoration: none;
+        margin: 0 auto;
+        text-align: center;
+
+        &:hover, &:focus, &:active {
+            @include btnColor(#3071a9,#285e8e);
+        }
+
+        &:active {
+            box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+        }
+    }
+}
