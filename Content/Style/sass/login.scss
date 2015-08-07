@@ -9,6 +9,18 @@ $boxOpacity: 0.8;
     border-color: $color;
 }
 
+@mixin filter($value: 10) {
+    /*公用样式*/
+    -webkit-filter: blur($value+px); /* Chrome, Opera */
+    -moz-filter: blur($value+px);
+    -ms-filter: blur($value+px);
+    filter: blur($value+px);
+}
+
+@mixin transition($prototype: background-color) {
+    transition: $prototype ease-in-out 0.2s;
+}
+
 
 html {
     height: 100%;
@@ -65,26 +77,23 @@ body {
         border-left: 2px solid #428bca;
         background-color: transparent;
         opacity: $boxOpacity;
-        transition: background-color ease-in-out 0.2s;
-
-        &:focus, &:hover {
-            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
-            border-right-color: $inputBorderColor;
-            border-top-color: $inputBorderColor;
-            border-bottom-color: $inputBorderColor;
-            background-color: #ebebeb;
-            opacity: 1;
-        }
+        @include transition();
+        font-size: 15px;
     }
 
     .login-input {
         padding: 15px;
-    }
 
-    .login-name {
-    }
-
-    .name-input {
+        &:focus, &:hover {
+            input {
+                box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+                border-right-color: $inputBorderColor;
+                border-top-color: $inputBorderColor;
+                border-bottom-color: $inputBorderColor;
+                background-color: #ebebeb;
+                opacity: 1;
+            }
+        }
     }
 
     .login-pass {
@@ -94,11 +103,19 @@ body {
     .fa-eye {
         position: absolute;
         right: 22px;
-        top: 30px;
+        top: 28px;
+        cursor: pointer;
+        color: #999;
+        @include transition(color);
+
+        &:hover {
+            color: #000;
+        }
     }
 
     .pass-input {
         padding-right: 25px;
+
         &::-ms-clear {
             display: none;
         }
@@ -133,5 +150,36 @@ body {
         &:active {
             box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
         }
+    }
+}
+
+.login-msg {
+    border: 1px solid #696969;
+    height: 50px;
+    line-height: 50px;
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: center;
+    max-width: 60%;
+    position: relative;
+    background-color: transparent;
+
+    .login-msg-bg {
+        @include filter(2);
+        width: 100%;
+        height: 100%;
+        opacity: 0.6;
+        top: 0;
+        left: 0;
+        background-color: #262626;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .login-msg-txt {
+        font-size: 1.32em;
+        color: #fff;
+        position: relative;
+        z-index: 2;
     }
 }
