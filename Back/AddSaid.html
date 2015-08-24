@@ -6,13 +6,12 @@
     <title>添加Said UED页面</title>
 
     <!-- Bootstrap -->
-    <link href="../../Content/Back/Style/bootstrap.css" rel="stylesheet" />
+    <link href="/Content/Style/bootstrap.css" rel="stylesheet" />
     <!--<link href="Frmework/css/flat-ui.min.css" rel="stylesheet" />-->
-    <link href="Frmework/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Content/Style/font-awesome.min.css" rel="stylesheet" />
     <!--<link href="Frmework/css/saidList.css" rel="stylesheet" />-->
-    <link href="../../Content/Back/Style/default.css" rel="stylesheet" />
-    <link href="../../Content/Back/Style/addSaid.css" rel="stylesheet" />
-    <script src="Frmework/js/require2-1-11.js" data-main="Frmework/js/main"></script>
+    <link href="/Content/Style/default.css" rel="stylesheet" />
+    <link href="/Content/Style/addSaid.css" rel="stylesheet" />
 </head>
 <body>
     <header class="navbar navbar-default navbar-fixed-top">
@@ -44,15 +43,6 @@
     <section class="page-container">
         <nav class="page-sidebar nav-collapse collapse navbar-collapse" id="example-navbar-collapse">
             <ul class="page-sidebar-menu">
-                <!--<li>
-                    <form class="sidebar-search">
-                        <div class="input-box">
-                            <a class="remove" href="javascript:;"></a>
-                            <input type="text" placeholder="Search...">
-                            <input type="button" value=" " class="submit">
-                        </div>
-                    </form>
-                </li>-->
                 <li class="active">
                     <a href="javascript:;">
                         <i class="icon-home"></i>
@@ -117,7 +107,7 @@
         </nav>
         <section class="container-main">
             <div class="page-header">
-                <h2>添加Said&nbsp;&nbsp;<small>&gt;添加一篇Said</small></h2>
+                <h3>添加Said&nbsp;&nbsp;<small>&gt;添加一篇Said</small><a href="javascript:;" id="said-help-btn" title="帮助"><i class="fa fa-question-circle"></i></a></h3>
             </div>
             <ol class="breadcrumb">
                 <li><a href="#">Home</a></li>
@@ -138,15 +128,6 @@
                     <div class="row said-view-container">
                         <div class="col-md-6">
                             <div class="panel panel-default relative-container">
-                                <!--<div class="said-mask" data-ng-show="ac.songImg===null" data-inputfile="" data-ng-model="ac.songImg">
-                                    <span>上传歌曲</span>
-                                    <div class="progress">
-                                        <div style="width: 0;" aria-valuemax="100" aria-valuemin="0" aria-valuenow="20" role="progressbar" class="progress-bar progress-bar-info">
-                                            <span class="sr-only"></span>
-                                        </div>
-                                    </div>
-                                    <input type="file" name="songImgFile" data-ng-model="article.songImgFile" class="hidden-file" />
-                                </div>-->
                                 <div class="panel-heading">歌曲</div>
                                 <div class="panel-body">
                                     <div class="afterClear">
@@ -287,24 +268,5 @@
     </section>
     <footer>
     </footer>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="Frmework/js/jQuery-2.1.1.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="Frmework/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-        require(['jquery', 'so/so', 'so/plug/search', 'said/addSaid'], function ($, so, search, addSaid) {
-            $(function () {
-                search(stag, ['javascript',
-                              'ECMAScript',
-                              'C#',
-                              '.NET',
-                              'jQuery',
-                              '.NET MVC',
-                              'Sql Server',
-                              'NodeJS']);
-            });
-        });
-
-    </script>
 </body>
 </html>

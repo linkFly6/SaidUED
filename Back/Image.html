@@ -1,0 +1,316 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Said管理 - 图片管理</title>
+    <link rel="stylesheet" href="/Content/Style/bootstrap.css">
+    <link rel="stylesheet" href="/Content/Style/font-awesome.min.css">
+    <link rel="stylesheet" href="/Content/Style/Global.css">
+    <link rel="stylesheet" href="/Content/Style/default.css">
+    <link rel="stylesheet" href="/Content/Style/imagesCenter.css">
+</head>
+<body>
+    <header class="navbar navbar-default navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+                        <span class="sr-only">切换的导航</span>
+                        <span class="fa icon-bar"></span>
+                        <span class="fa icon-bar"></span>
+                        <span class="fa icon-bar"></span>
+                    </button>
+                    <a href="#" class="navbar-brand">Said</a>
+                </div>
+                <ul class="nav pull-right">
+                    <li class="dropdown pull-left">
+                        <a class="dropdown-toggle" href="javascript:;">
+                            <i class="fa fa-envelope"></i>
+                            <span class="badge">1</span>
+                        </a>
+                    </li>
+                    <li class="dropdown  pull-left">
+                        <a class="dropdown-toggle" href="javascript:;">Said首页</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <section class="page-container">
+        <nav id="example-navbar-collapse" class="page-sidebar nav-collapse collapse navbar-collapse">
+            <ul class="page-sidebar-menu">
+                <!--<li>
+                    <form class="sidebar-search">
+                        <div class="input-box">
+                            <a class="remove" href="javascript:;"></a>
+                            <input type="text" placeholder="Search...">
+                            <input type="button" value=" " class="submit">
+                        </div>
+                    </form>
+                </li>-->
+                <li class="active">
+                    <a href="/Back">
+                        <i class="fa fa-home"></i>
+                        <span class="title">Home</span>
+                        <span class="selected"></span>
+                    </a>
+                </li>
+                <li class="complex">
+                    <a href="javascript:;">
+                        <i class="fa fa-pencil-square-o"></i>
+                        <span class="title">Said管理</span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="/Back/Said">
+                                <i class=" fa fa-th-list"></i><span class="title">Said管理</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Back/Said/AddSaid">
+                                <i class="fa fa-pencil-square"></i><span class="title">添加Said</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="complex">
+                    <a href="javascript:;">
+                        <i class="fa fa-laptop"></i>
+                        <span class="title">文章管理</span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="/Back/Blog">
+                                <i class="fa fa-coffee"></i><span class="title">Blog管理</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Back/Blog/AddBlog">
+                                <i class=" fa fa-pencil-square"></i><span class="title">添加Blog</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <i class="fa fa-credit-card"></i>
+                        <span class="title">实验室</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Back/Classify">
+                        <i class="fa fa-tags"></i>
+                        <span class="title">标签/分类</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <i class="fa fa-comments"></i>
+                        <span class="title">消息中心</span>
+                    </a>
+                </li>
+                <li class="complex">
+                    <a href="javascript:;">
+                        <i class="fa fa-folder-open"></i>
+                        <span class="title">资源管理</span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li title="配置和管理图片">
+                            <a href="/Back/Image">
+                                <i class="fa fa-picture-o"></i>
+                                <span class="title">图片管理</span>
+                            </a>
+                        </li>
+                        <li title="配合和管理音乐文件">
+                            <a href="/Back/Music">
+                                <i class="fa fa-music"></i>
+                                <span class="title">音乐管理</span>
+                            </a>
+                        </li>
+                        <li title="配置上传大小、可上传文件、上传路径等">
+                            <a href="javascript:;">
+                                <i class="fa fa-folder"></i>
+                                <span class="title">资源配置</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="complex">
+                    <a href="javascript:;">
+                        <i class="fa fa-pie-chart"></i>
+                        <span class="title">统计中心</span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="javascript:;">访问概况</a></li>
+
+                        <li><a href="javascript:;">时段分析</a></li>
+                        <li><a href="javascript:;">回复统计</a></li>
+                    </ul>
+                </li>
+                <li class="complex open">
+                    <a href="javascript:;">
+                        <i class="fa fa-cogs"></i>
+                        <span class="title">配置中心</span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="/Back/Site/PageConfig">
+                                <i class="fa fa-th-large"></i>
+                                <span class="title">站点配置</span>
+                            </a>
+                        </li>
+                        <li title="监控整个站点的健康状态">
+                            <a href="javascript:;">
+                                <i class="fa fa-connectdevelop"></i>
+                                <span class="title">活动监控</span>
+                            </a>
+                        </li>
+                        <li title="设置访问白名单和黑名单">
+                            <a href="javascript:;">
+                                <i class="fa fa-globe"></i>
+                                <span class="title">访问过滤</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <section class="container-main">
+            <div ms-dom="modal" ms-controller="modal" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button data-dismiss="modal" class="close" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                            <h4 class="modal-title">{{title}}</h4>
+                        </div>
+                        <div class="modal-body">{{body}}</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-header">
+                <h3>图片管理&nbsp;&nbsp;<small>&gt;&nbsp;管理每一张美轮美奂并且精致的图片</small><a title="帮助" id="said-help-btn" href="javascript:;"><i class="fa fa-question-circle"></i></a></h3>
+            </div>
+            <ol class="breadcrumb">
+                <li><a href="/Back">Home</a></li>
+                <li>资源管理</li>
+                <li class="active">图片管理</li>
+            </ol>
+            <div class="main-context">
+                <div class="source-content" avalonctrl="model">
+                    <div class="source-head">
+                        <div class="toolbar-left">
+                            <div class="btn-group">
+                                <button aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" class="btn btn-default btn-sm dropdown-toggle" type="button">日志 <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li><a title="选择系统分类下的图片" href="javascript:;">全部</a></li>
+                                    <li><a title="选择系统分类下的图片" href="javascript:;">系统</a></li>
+                                    <li><a title="选择Blog分类下的图片" href="javascript:;">日志</a></li>
+                                    <li><a title="选择Said分类下的图片" href="javascript:;">音乐</a></li>
+                                    <li><a title="选择Music分类下的图片" href="javascript:;">Said</a></li>
+                                    <li><a title="选择Page分类下的图片" href="javascript:;">页面</a></li>
+                                    <li><a title="选择Other分类下的图片" href="javascript:;">其他</a></li>
+                                    <li class="divider" role="separator"></li>
+                                    <li><a title="尚未推出" href="javascript:;">实验室</a></li>
+                                </ul>
+                            </div>
+                            <div class="btn btn-upload btn-default btn-sm" avalonctrl="uploadImages"><div style="z-index: 3; display: block;" class="upload-mask">                        <span class="upload-text">上传图片</span>                     <div role="progressbar" class="upload-progress" style="width: 0%;"></div>                      <input type="file" class="hidden-file" style="display: block;"></div></div>
+
+                        </div>
+                        <div class="source-loading">
+                            <div class="loading-line" style="display: none;">
+                                <span class="loading-dot"></span>
+                                <span class="loading-dot"></span>
+                                <span class="loading-dot"></span>
+                                <span class="loading-dot"></span>
+                                <span class="loading-dot"></span>
+                            </div>
+                        </div>
+                        <div class="toolbar-right">
+                            <span class="source-sum"><span class="selected-path">/Source/Blog/Images/</span>-&nbsp;6</span>
+                        </div>
+                    </div>
+                    <div class="source-context">
+                        <div class="source-body">
+                            <!--repeat335642064838558858752691358116528--><div class="source-item">
+                                <div class="item-img" style="background-image: url(/Content/Images/TempImage/419020150316203408.jpg);"></div>
+                                <div class="item-info">
+                                    <span class="img-name">419020150316203408.jpg</span>
+                                    <a href="javascript:;" class="fa fa-times item-delete" title="删除"></a>
+                                </div>
+                            </div><!--repeat335642064838558858752691358116528--><div class="source-item selected">
+                                <div class="item-img" style="background-image: url(/Content/Images/TempImage/884520150316200108.jpg);"></div>
+                                <div class="item-info">
+                                    <span class="img-name">884520150316200108.jpg</span>
+                                    <a href="javascript:;" class="fa fa-times item-delete" title="删除"></a>
+                                </div>
+                            </div><!--repeat335642064838558858752691358116528--><div class="source-item">
+                                <div class="item-img" style="background-image: url(/Content/Images/TempImage/022220150216204708.jpg);"></div>
+                                <div class="item-info">
+                                    <span class="img-name">022220150216204708.jpg</span>
+                                    <a href="javascript:;" class="fa fa-times item-delete" title="删除"></a>
+                                </div>
+                            </div><!--repeat335642064838558858752691358116528--><div class="source-item">
+                                <div class="item-img" style="background-image: url(/Content/Images/TempImage/395320150216203808.jpg);"></div>
+                                <div class="item-info">
+                                    <span class="img-name">395320150216203808.jpg</span>
+                                    <a href="javascript:;" class="fa fa-times item-delete" title="删除"></a>
+                                </div>
+                            </div><!--repeat335642064838558858752691358116528--><div class="source-item">
+                                <div class="item-img" style="background-image: url(/Content/Images/TempImage/437420150216202308.jpg);"></div>
+                                <div class="item-info">
+                                    <span class="img-name">437420150216202308.jpg</span>
+                                    <a href="javascript:;" class="fa fa-times item-delete" title="删除"></a>
+                                </div>
+                            </div><!--repeat335642064838558858752691358116528--><div class="source-item">
+                                <div class="item-img" style="background-image: url(/Content/Images/TempImage/800020150116205608.jpg);"></div>
+                                <div class="item-info">
+                                    <span class="img-name">800020150116205608.jpg</span>
+                                    <a href="javascript:;" class="fa fa-times item-delete" title="删除"></a>
+                                </div>
+                            </div><!--repeat335642064838558858752691358116528:end-->
+                        </div>
+                        <nav class="source-footer">
+                            <ul class="pagination">
+                                <!--ms-if-->
+                                <!--ms-if-->
+                                <!--repeat0091932347129847216056264019915594-->
+                                <li class="active">
+                                    <!--ms-if-->
+                                    <span>1</span>
+                                </li><!--repeat0091932347129847216056264019915594:end-->
+                                <!--ms-if-->
+                                <!--ms-if-->
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="source-detail" avalonctrl="currData">
+                    <ul class="source-info" style="display: block;">
+                        <li>884520150316200108.jpg</li>
+                        <li>2015年08月16日 20:03:01</li>
+                        <li>588.63KB</li>
+                        <li>日志</li>
+                        <li>被引用0次</li>
+                        <li class="text-center"><a class="btn btn-default" target="_blank" href="/Source/Blog/Images/884520150316200108.jpg">查看大图</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+    </section>
+    <section id="said-page-mask">
+        <section id="said-mask-box"></section><div class="said-mask-content said-watermark" id="said-help" style="display: block;">
+            <ul>
+                <li>Said生成的缩略图不能有<span class="keywords">透明背景</span>（因为缩略图最终生成是jpg格式的）</li>
+                <li>上传的图片，最后会被裁剪为<span class="keywords">1.82</span>比例的图片</li>
+                <li>上传的图片不允许超过<span class="keywords">1MB</span></li>
+                <li>上传的音乐文件不允许超过<span class="keywords">6MB</span></li>
+                <li>上传图片的时候注意上传的分类！默认上传在<span class="keywords">其他</span>分类下</li>
+            </ul>
+        </div>
+    </section>
+    <footer></footer>
+</body>
+</html>

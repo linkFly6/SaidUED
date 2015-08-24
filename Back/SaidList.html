@@ -1,54 +1,49 @@
 ﻿<!DOCTYPE html>
 <html lang="zh-cn">
 <head>
+    <avalon class="avalonHide" ms-skip="">
+    <style id="avalonStyle">
+        .avalonHide { display: none !important; }
+    </style></avalon>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Said后台管理</title>
-
-    <!-- Bootstrap -->
-    <link href="Frmework/css/bootstrap.min.css" rel="stylesheet">
-    <link href="Frmework/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="Frmework/css/default.css" rel="stylesheet" />
-    <link href="Frmework/css/saidList.css" rel="stylesheet" />
-    <script src="Frmework/js/require2-1-11.js" data-main="Frmework/js/main"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Said管理中心</title>
+    <link rel="stylesheet" href="/Content/Style/bootstrap.css">
+    <link rel="stylesheet" href="/Content/Style/font-awesome.min.css">
+    <link rel="stylesheet" href="/Content/Style/Global.css">
+    <link rel="stylesheet" href="/Content/Style/default.css">
+    <link rel="stylesheet" href="/Content/Style/saidCenter.css">
+    <link rel="stylesheet" href="/Content/Style/bootstrap-table.min.css">
 </head>
 <body>
     <header class="navbar navbar-default navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <button data-target="#example-navbar-collapse" data-toggle="collapse" class="navbar-toggle">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
                         <span class="sr-only">切换的导航</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
+                        <span class="fa icon-bar"></span>
+                        <span class="fa icon-bar"></span>
+                        <span class="fa icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Said</a>
+                    <a href="#" class="navbar-brand">Said</a>
                 </div>
                 <ul class="nav pull-right">
                     <li class="dropdown pull-left">
-                        <a href="javascript:;" class="dropdown-toggle">
-                            <i class="icon-envelope"></i>
+                        <a class="dropdown-toggle" href="javascript:;">
+                            <i class="fa fa-envelope"></i>
                             <span class="badge">1</span>
                         </a>
                     </li>
                     <li class="dropdown  pull-left">
-                        <a href="javascript:;" class="dropdown-toggle">Said首页</a>
+                        <a class="dropdown-toggle" href="javascript:;">Said首页</a>
                     </li>
                 </ul>
             </div>
         </div>
     </header>
     <section class="page-container">
-        <nav class="page-sidebar nav-collapse collapse navbar-collapse" id="example-navbar-collapse">
+        <nav id="example-navbar-collapse" class="page-sidebar nav-collapse collapse navbar-collapse">
             <ul class="page-sidebar-menu">
                 <!--<li>
                     <form class="sidebar-search">
@@ -60,345 +55,164 @@
                     </form>
                 </li>-->
                 <li class="active">
-                    <a href="javascript:;">
-                        <i class="icon-home"></i>
-                        <span class="title">控制中心</span>
+                    <a href="/Back">
+                        <i class="fa fa-home"></i>
+                        <span class="title">Home</span>
                         <span class="selected"></span>
                     </a>
                 </li>
-                <li>
+                <li class="complex">
                     <a href="javascript:;">
-                        <i class="icon-edit"></i>
+                        <i class="fa fa-pencil-square-o"></i>
                         <span class="title">Said管理</span>
                     </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="/Back/Said">
+                                <i class=" fa fa-th-list"></i><span class="title">Said管理</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Back/Said/AddSaid">
+                                <i class="fa fa-pencil-square"></i><span class="title">添加Said</span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
-                <li>
+                <li class="complex">
                     <a href="javascript:;">
-                        <i class="icon-laptop"></i>
+                        <i class="fa fa-laptop"></i>
                         <span class="title">文章管理</span>
                     </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="/Back/Blog">
+                                <i class="fa fa-coffee"></i><span class="title">Blog管理</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Back/Blog/AddBlog">
+                                <i class=" fa fa-pencil-square"></i><span class="title">添加Blog</span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li>
                     <a href="javascript:;">
-                        <i class="icon-credit-card"></i>
+                        <i class="fa fa-credit-card"></i>
                         <span class="title">实验室</span>
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;">
-                        <i class="icon-tags"></i>
-                        <span class="title">标签管理</span>
+                    <a href="/Back/Classify">
+                        <i class="fa fa-tags"></i>
+                        <span class="title">标签/分类</span>
                     </a>
                 </li>
                 <li>
                     <a href="javascript:;">
-                        <i class="icon-cogs"></i>
+                        <i class="fa fa-comments"></i>
                         <span class="title">消息中心</span>
                     </a>
                 </li>
                 <li class="complex">
                     <a href="javascript:;">
-                        <i class="icon-bar-chart"></i>
+                        <i class="fa fa-folder-open"></i>
+                        <span class="title">资源管理</span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li title="配置和管理图片">
+                            <a href="/Back/Image">
+                                <i class="fa fa-picture-o"></i>
+                                <span class="title">图片管理</span>
+                            </a>
+                        </li>
+                        <li title="配合和管理音乐文件">
+                            <a href="/Back/Music">
+                                <i class="fa fa-music"></i>
+                                <span class="title">音乐管理</span>
+                            </a>
+                        </li>
+                        <li title="配置上传大小、可上传文件、上传路径等">
+                            <a href="javascript:;">
+                                <i class="fa fa-folder"></i>
+                                <span class="title">资源配置</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="complex">
+                    <a href="javascript:;">
+                        <i class="fa fa-pie-chart"></i>
                         <span class="title">统计中心</span>
-                        <span class="arrow icon-angle-down"></span>
                     </a>
                     <ul class="sub-menu">
                         <li><a href="javascript:;">访问概况</a></li>
-                        <li><a href="javascript:;">访客地区</a></li>
+
                         <li><a href="javascript:;">时段分析</a></li>
                         <li><a href="javascript:;">回复统计</a></li>
                     </ul>
                 </li>
                 <li class="complex open">
                     <a href="javascript:;">
-                        <i class="icon-sitemap"></i>
+                        <i class="fa fa-cogs"></i>
                         <span class="title">配置中心</span>
-                        <span class="arrow icon-angle-up"></span>
                     </a>
                     <ul class="sub-menu">
-                        <li><a href="javascript:;">页面配置</a></li>
+                        <li>
+                            <a href="/Back/Site/PageConfig">
+                                <i class="fa fa-th-large"></i>
+                                <span class="title">站点配置</span>
+                            </a>
+                        </li>
+                        <li title="监控整个站点的健康状态">
+                            <a href="javascript:;">
+                                <i class="fa fa-connectdevelop"></i>
+                                <span class="title">活动监控</span>
+                            </a>
+                        </li>
+                        <li title="设置访问白名单和黑名单">
+                            <a href="javascript:;">
+                                <i class="fa fa-globe"></i>
+                                <span class="title">访问过滤</span>
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>
         </nav>
         <section class="container-main">
-            <div class="page-header">
-                <h2>控制中心&nbsp;&nbsp;<small>Said首台管理首页</small></h2>
-            </div>
-            <div class="main-context">
-                <div class="context-chart">
-                    <div id="userChart">
+            <div ms-dom="modal" ms-controller="modal" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button data-dismiss="modal" class="close" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                            <h4 class="modal-title">{{title}}</h4>
+                        </div>
+                        <div class="modal-body">{{body}}</div>
                     </div>
                 </div>
-                <div class="gridContainer">
-                    <table class="bootgrid">
-                        <colgroup>
-                            <col style="width: 20%;" />
-                            <col style="width: 25%;" />
-                            <col style="width: 15%;" />
-                            <col style="width: 5%;" />
-                            <col style="width: 5%;" />
-                            <col style="width: 10%;" />
-                            <col style="width: 10%;" />
-                            <col style="width: 10%;" />
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th>名称</th>
-                                <th>描述</th>
-                                <th>歌曲</th>
-                                <th>浏览</th>
-                                <th>回复</th>
-                                <th>类型</th>
-                                <th>标签</th>
-                                <th>操作</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>世界很大，风住过这里</td>
-                                <td>梵高的耳朵</td>
-                                <td>The Only Exception</td>
-                                <td>12</td>
-                                <td>1</td>
-                                <td>音乐</td>
-                                <td>Music</td>
-                                <td><a class="btn btn-default btn-sm">修改</a>&nbsp;&nbsp;<a class="btn btn-default btn-sm">删除</a></td>
-                            </tr>
-                            <tr class="grid-check">
-                                <td>世界很大，风住过这里</td>
-                                <td>梵高的耳朵</td>
-                                <td>The Only Exception</td>
-                                <td>12</td>
-                                <td>1</td>
-                                <td>音乐</td>
-                                <td>Music</td>
-                                <td><a class="btn btn-default btn-sm">修改</a>&nbsp;&nbsp;<a class="btn btn-default btn-sm">删除</a></td>
-                            </tr>
-                            <tr>
-                                <td>世界很大，风住过这里</td>
-                                <td>梵高的耳朵</td>
-                                <td>The Only Exception</td>
-                                <td>12</td>
-                                <td>1</td>
-                                <td>音乐</td>
-                                <td>Music</td>
-                                <td><a class="btn btn-default btn-sm">修改</a>&nbsp;&nbsp;<a class="btn btn-default btn-sm">删除</a></td>
-                            </tr>
-                            <tr>
-                                <td>世界很大，风住过这里</td>
-                                <td>梵高的耳朵</td>
-                                <td>The Only Exception</td>
-                                <td>12</td>
-                                <td>1</td>
-                                <td>音乐</td>
-                                <td>Music</td>
-                                <td><a class="btn btn-default btn-sm">修改</a>&nbsp;&nbsp;<a class="btn btn-default btn-sm">删除</a></td>
-                            </tr>
-                            <tr>
-                                <td>世界很大，风住过这里</td>
-                                <td>梵高的耳朵</td>
-                                <td>The Only Exception</td>
-                                <td>12</td>
-                                <td>1</td>
-                                <td>音乐</td>
-                                <td>Music</td>
-                                <td><a class="btn btn-default btn-sm">修改</a>&nbsp;&nbsp;<a class="btn btn-default btn-sm">删除</a></td>
-                            </tr>
-                            <tr>
-                                <td>世界很大，风住过这里</td>
-                                <td>梵高的耳朵</td>
-                                <td>The Only Exception</td>
-                                <td>12</td>
-                                <td>1</td>
-                                <td>音乐</td>
-                                <td>Music</td>
-                                <td><a class="btn btn-default btn-sm">修改</a>&nbsp;&nbsp;<a class="btn btn-default btn-sm">删除</a></td>
-                            </tr>
-                            <tr>
-                                <td>世界很大，风住过这里</td>
-                                <td>梵高的耳朵</td>
-                                <td>The Only Exception</td>
-                                <td>12</td>
-                                <td>1</td>
-                                <td>音乐</td>
-                                <td>Music</td>
-                                <td><a class="btn btn-default btn-sm">修改</a>&nbsp;&nbsp;<a class="btn btn-default btn-sm">删除</a></td>
-                            </tr>
-                            <tr>
-                                <td>世界很大，风住过这里</td>
-                                <td>梵高的耳朵</td>
-                                <td>The Only Exception</td>
-                                <td>12</td>
-                                <td>1</td>
-                                <td>音乐</td>
-                                <td>Music</td>
-                                <td><a class="btn btn-default btn-sm">修改</a>&nbsp;&nbsp;<a class="btn btn-default btn-sm">删除</a></td>
-                            </tr>
-                            <tr>
-                                <td>世界很大，风住过这里</td>
-                                <td>梵高的耳朵</td>
-                                <td>The Only Exception</td>
-                                <td>12</td>
-                                <td>1</td>
-                                <td>音乐</td>
-                                <td>Music</td>
-                                <td><a class="btn btn-default btn-sm">修改</a>&nbsp;&nbsp;<a class="btn btn-default btn-sm">删除</a></td>
-                            </tr>
-                            <tr>
-                                <td>世界很大，风住过这里</td>
-                                <td>梵高的耳朵</td>
-                                <td>The Only Exception</td>
-                                <td>12</td>
-                                <td>1</td>
-                                <td>音乐</td>
-                                <td>Music</td>
-                                <td><a class="btn btn-default btn-sm">修改</a>&nbsp;&nbsp;<a class="btn btn-default btn-sm">删除</a></td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="8">
-                                    <ul class="pagination">
-                                        <li><a href="javascript:;">«</a></li>
-                                        <li><a href="javascript:;">1</a></li>
-                                        <li><a href="javascript:;">2</a></li>
-                                        <li><a href="javascript:;">9</a></li>
-                                        <li><a href="javascript:;">100</a></li>
-                                        <li><a href="javascript:;">»</a></li>
-                                    </ul>
-                                </td>
-                            </tr>
-                        </tfoot>
-                    </table>
+            </div>
+
+            <div class="page-header">
+                <h3>添加Said&nbsp;&nbsp;<small>&gt;添加一篇Said</small></h3>
+            </div>
+            <ol class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Siad管理</a></li>
+                <li class="active">添加Said</li>
+            </ol>
+            <div class="main-context">
+                <div class="context-chart">
+                    <div id="userChart" _echarts_instance_="1440428267986" style="background-color: transparent; cursor: default;"><div style="position: relative; overflow: hidden; width: 1665px; height: 400px;"><div style="position: absolute; left: 0px; top: 0px; width: 1665px; height: 400px;" width="1665" height="400" data-zr-dom-id="bg"></div><canvas style="position: absolute; left: 0px; top: 0px; width: 1665px; height: 400px;" width="1665" height="400" data-zr-dom-id="0"></canvas><canvas style="position: absolute; left: 0px; top: 0px; width: 1665px; height: 400px;" width="1665" height="400" data-zr-dom-id="1"></canvas><canvas style="position: absolute; left: 0px; top: 0px; width: 1665px; height: 400px;" width="1665" height="400" data-zr-dom-id="2"></canvas><canvas style="position: absolute; left: 0px; top: 0px; width: 1665px; height: 400px;" width="1665" height="400" data-zr-dom-id="3"></canvas><canvas style="position: absolute; left: 0px; top: 0px; width: 1665px; height: 400px;" width="1665" height="400" data-zr-dom-id="4"></canvas><canvas style="position: absolute; left: 0px; top: 0px; width: 1665px; height: 400px;" width="1665" height="400" data-zr-dom-id="6"></canvas><canvas style="position: absolute; left: 0px; top: 0px; width: 1665px; height: 400px;" width="1665" height="400" data-zr-dom-id="8"></canvas><canvas style="position: absolute; left: 0px; top: 0px; width: 1665px; height: 400px;" width="1665" height="400" data-zr-dom-id="_zrender_hover_"></canvas><div class="echarts-dataview" style="position: absolute; display: block; overflow: hidden; transition: height 0.8s ease 0s, background-color 1s ease 0s; z-index: 1; left: 0px; top: 0px; width: 1665px; height: 0px; background-color: rgb(240, 255, 255);"></div><div style="position: absolute; display: none; border-style: solid; white-space: nowrap; transition: left 0.4s ease 0s, top 0.4s ease 0s; background-color: rgba(0, 0, 0, 0.7); border-width: 0px; border-color: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); text-decoration: none; font-family: Arial,Verdana,sans-serif; font-size: 12px; line-height: 18px; font-style: normal; font-weight: normal; padding: 5px; left: 549px; top: 234px;">07:00<br>昨日 : 2<br>今日 : 9</div></div></div>
+                </div>
+                <div class="bs-table">
+                    <div class="bootstrap-table"><div class="fixed-table-toolbar"><div class="columns columns-right btn-group pull-right"><button title="Refresh" name="refresh" type="button" class="btn btn-default"><i class="glyphicon glyphicon-refresh icon-refresh"></i></button><button title="Toggle" name="toggle" type="button" class="btn btn-default"><i class="glyphicon glyphicon glyphicon-list-alt icon-list-alt"></i></button><div title="Columns" class="keep-open btn-group"><button data-toggle="dropdown" class="btn btn-default dropdown-toggle" type="button"><i class="glyphicon glyphicon-th icon-th"></i> <span class="caret"></span></button><ul role="menu" class="dropdown-menu"><li><label><input type="checkbox" checked="checked" value="0" data-field="STitle"> 名&nbsp;&nbsp;&nbsp;称</label></li><li><label><input type="checkbox" checked="checked" value="1" data-field="SSummary"> 描&nbsp;&nbsp;&nbsp;述</label></li><li><label><input type="checkbox" checked="checked" value="2" data-field="Song.SongName"> 歌&nbsp;&nbsp;&nbsp;曲</label></li><li><label><input type="checkbox" checked="checked" value="3" data-field="SPV"> 浏&nbsp;&nbsp;&nbsp;览</label></li><li><label><input type="checkbox" checked="checked" value="4" data-field="SDate"> 发布时间</label></li><li><label><input type="checkbox" checked="checked" value="5" data-field="Classify.CName"> 分&nbsp;&nbsp;&nbsp;类</label></li><li><label><input type="checkbox" checked="checked" value="6" data-field="STag"> 标&nbsp;&nbsp;&nbsp;签</label></li><li><label><input type="checkbox" checked="checked" value="7" data-field="SaidId"> 操&nbsp;&nbsp;&nbsp;作</label></li></ul></div></div><div class="pull-right search"><input type="text" placeholder="Search" class="form-control"></div></div><div class="fixed-table-container"><div class="fixed-table-header"><table></table></div><div class="fixed-table-body"><div class="fixed-table-loading" style="top: 37px; display: none;">Loading, please wait…</div><table data-side-pagination="server" data-pagination="true" data-search="true" data-show-columns="true" data-show-toggle="true" data-show-refresh="true" data-striped="true" data-url="/Said/GetSaidList" class="table table-hover table-striped" id="btTable"><thead><tr><th style="vertical-align: middle; "><div class="th-inner sortable">名&nbsp;&nbsp;&nbsp;称</div><div class="fht-cell"></div></th><th style="vertical-align: middle; "><div class="th-inner sortable">描&nbsp;&nbsp;&nbsp;述</div><div class="fht-cell"></div></th><th style="vertical-align: middle; "><div class="th-inner sortable">歌&nbsp;&nbsp;&nbsp;曲</div><div class="fht-cell"></div></th><th style="vertical-align: middle; "><div class="th-inner sortable">浏&nbsp;&nbsp;&nbsp;览</div><div class="fht-cell"></div></th><th style="vertical-align: middle; "><div class="th-inner sortable">发布时间</div><div class="fht-cell"></div></th><th style="vertical-align: middle; "><div class="th-inner sortable">分&nbsp;&nbsp;&nbsp;类</div><div class="fht-cell"></div></th><th style="vertical-align: middle; "><div class="th-inner ">标&nbsp;&nbsp;&nbsp;签</div><div class="fht-cell"></div></th><th style=""><div class="th-inner ">操&nbsp;&nbsp;&nbsp;作</div><div class="fht-cell"></div></th></tr></thead><tbody><tr class="no-records-found"><td colspan="8">No matching records found</td></tr></tbody></table></div><div class="fixed-table-pagination" style="display: none;"><div class="pull-left pagination-detail"><span class="pagination-info">Showing 1 to 0 of 0 rows</span><span class="page-list" style="display: none;"><span class="btn-group dropup"><button data-toggle="dropdown" class="btn btn-default dropdown-toggle" type="button"><span class="page-size">10</span> <span class="caret"></span></button><ul role="menu" class="dropdown-menu"><li class="active"><a href="javascript:void(0)">10</a></li></ul></span> records per page</span></div><div class="pull-right pagination" style="display: none;"><ul class="pagination"><li class="page-first disabled"><a href="javascript:void(0)">&lt;&lt;</a></li><li class="page-pre disabled"><a href="javascript:void(0)">&lt;</a></li><li class="page-next disabled"><a href="javascript:void(0)">&gt;</a></li><li class="page-last disabled"><a href="javascript:void(0)">&gt;&gt;</a></li></ul></div></div></div></div><div class="clearfix"></div>
                 </div>
             </div>
         </section>
     </section>
+    <section id="said-page-mask"><section id="said-mask-box"></section></section>
     <footer></footer>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="Frmework/js/jQuery-2.1.1.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="Frmework/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-        require.config({
-            packages: [
-            {
-                name: 'echarts',
-                location: 'echarts-2.1.8/src',
-                main: 'echarts'
-            },
-            {
-                name: 'zrender',
-                //location: 'http://ecomfe.github.io/zrender/src',
-                location: 'zrender-master/src',
-                main: 'zrender'
-            }
-            ]
-        });
-        var option = {
-            title: {
-                text: '2014-11-15',
-                subtext: '昨日/今日访问量'
-            },
-            tooltip: {
-                trigger: 'axis'
-            },
-            legend: {
-                data: ['昨日', '今日']
-            },
-            toolbox: {
-                show: true,
-                feature: {
-                    mark: { show: true },
-                    dataView: { show: true, readOnly: false },
-                    magicType: { show: true, type: ['line', 'bar', 'stack', 'tiled'] },
-                    restore: { show: true },
-                    saveAsImage: { show: true }
-                }
-            },
-            calculable: true,
-            xAxis: [
-                {
-                    type: 'category',
-                    boundaryGap: false,
-                    data: ['0:00', '1:00', '2:00', '3:00', '4:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00']
-                }
-            ],
-            yAxis: [
-                {
-                    type: 'value'
-                }
-            ],
-            series: [
-                {
-                    name: '昨日',
-                    type: 'line',
-                    smooth: true,
-                    itemStyle: { normal: { areaStyle: { type: 'default' } } },
-                    data: [1, 5, 2, 15, 5, 4, 3, 2, 4, 4, 4, 5, 12, 15, 20, 7, 6, 6, 1, 0, 2, 0, 6, 20]
-                },
-                {
-                    name: '今日',
-                    type: 'line',
-                    smooth: true,
-                    itemStyle: { normal: { areaStyle: { type: 'default' } } },
-                    data: [5, 2, 5, 5, 5, 3, 3, 9, 10, 19, 16, 16, 22, 7, 7, 8, 8, 0, 0, 0, 0, 1, 6, 7]
-                }
-            ]
-        };
-        require(['echarts', 'echarts/chart/line'], function (ec) {
-            var myChart = ec.init(document.getElementById('userChart'));
-            myChart.setOption(option);
-        });
-    </script>
-    <!--<script type="text/javascript">
-        // Step:3 echarts & zrender as a Global Interface by the echarts-plain.js.
-        // Step:3 echarts和zrender被echarts-plain.js写入为全局接口
-        var myChart = echarts.init(document.getElementById('userChart'));
-        myChart.setOption({
-            tooltip: {
-                trigger: 'axis'
-            },
-            legend: {
-                data: ['蒸发量', '降水量']
-            },
-            toolbox: {
-                show: true,
-                feature: {
-                    mark: { show: true },
-                    dataView: { show: true, readOnly: false },
-                    magicType: { show: true, type: ['line', 'bar'] },
-                    restore: { show: true },
-                    saveAsImage: { show: true }
-                }
-            },
-            calculable: true,
-            xAxis: [
-            {
-                type: 'category',
-                data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
-            }
-            ],
-            yAxis: [
-            {
-                type: 'value',
-                splitArea: { show: true }
-            }
-            ],
-            series: [
-            {
-                name: '蒸发量',
-                type: 'bar',
-                data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
-            },
-            {
-                name: '降水量',
-                type: 'bar',
-                data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
-            }
-            ]
-        });
-    </script>-->
 </body>
 </html>

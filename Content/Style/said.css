@@ -23,7 +23,7 @@ body, #said-page { background-color: #f6f6f1; }
 .music-song-play { right: 0; top: 0; margin: 10px 0; padding: 0 10px 0 20px; width: 370px; height: 100%; /*background: url(/Content/Images/sidebar-bg.jpg) no-repeat; background-size: contain;*/ border-left: 1px solid #FCFCFC; }
 /*content-bg*/
 .content-bg { border-bottom: 1px solid white; position: absolute; top: 0; left: 0; height: 380px; width: 100%; overflow: hidden; }
-.content-bg-img { width: 100%; height: 680px; background: url(../Images/said-banner.jpg) no-repeat; animation: 20s linear 0s normal none infinite banner-anima; position: relative; left: 0; transition: left 10s linear 0s; background-size: cover; background-position: center bottom; }
+.content-bg-img { width: 100%; height: 680px; background: url(/Content/Images/said-banner.jpg) no-repeat; animation: 20s linear 0s normal none infinite banner-anima; position: relative; left: 0; transition: left 10s linear 0s; background-size: cover; background-position: center bottom; }
 .music-play-status { float: left; position: relative; top: 45px; }
     .music-play-status:first-child { width: 35px; top: 51px; }
     .music-play-status span { font-size: 12px; }

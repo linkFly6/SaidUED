@@ -7,16 +7,10 @@
     <title>Said后台管理</title>
 
     <!-- Bootstrap -->
-    <link href="Frmework/css/bootstrap.min.css" rel="stylesheet">
-    <link href="Frmework/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="Frmework/css/default.css" rel="stylesheet" />
-    <link href="Frmework/css/saidList.css" rel="stylesheet" />
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <link href="/Content/Style/bootstrap.css" rel="stylesheet" />
+    <link href="/Content/Style/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Content/Style/default.css" rel="stylesheet" />
+    <link href="/Content/Style/back-index.css" rel="stylesheet" />
 </head>
 <body>
     <header class="navbar navbar-default navbar-fixed-top">
@@ -25,16 +19,16 @@
                 <div class="navbar-header">
                     <button data-target="#example-navbar-collapse" data-toggle="collapse" class="navbar-toggle">
                         <span class="sr-only">切换的导航</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
+                        <span class="fa icon-bar"></span>
+                        <span class="fa icon-bar"></span>
+                        <span class="fa icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="#">Said</a>
                 </div>
                 <ul class="nav pull-right">
                     <li class="dropdown pull-left">
                         <a href="javascript:;" class="dropdown-toggle">
-                            <i class="icon-envelope"></i>
+                            <i class="fa fa-envelope"></i>
                             <span class="badge">1</span>
                         </a>
                     </li>
@@ -48,84 +42,154 @@
     <section class="page-container">
         <nav class="page-sidebar nav-collapse collapse navbar-collapse" id="example-navbar-collapse">
             <ul class="page-sidebar-menu">
-                <!--<li>
-                    <form class="sidebar-search">
-                        <div class="input-box">
-                            <a class="remove" href="javascript:;"></a>
-                            <input type="text" placeholder="Search...">
-                            <input type="button" value=" " class="submit">
-                        </div>
-                    </form>
-                </li>-->
                 <li class="active">
                     <a href="javascript:;">
-                        <i class="icon-home"></i>
-                        <span class="title">控制中心</span>
+                        <i class="fa fa-home"></i>
+                        <span class="title">Home</span>
                         <span class="selected"></span>
                     </a>
                 </li>
-                <li>
+                <li class="complex">
                     <a href="javascript:;">
-                        <i class="icon-edit"></i>
+                        <i class="fa fa-pencil-square-o"></i>
                         <span class="title">Said管理</span>
                     </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="javascript:;">
+                                <i class=" fa fa-th-list"></i><span class="title">Said管理</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <i class="fa fa-pencil-square"></i><span class="title">添加Said</span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
-                <li>
+                <li class="complex">
                     <a href="javascript:;">
-                        <i class="icon-laptop"></i>
+                        <i class="fa fa-laptop"></i>
                         <span class="title">文章管理</span>
                     </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="javascript:;">
+                                <i class="fa fa-coffee"></i><span class="title">Blog管理</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <i class=" fa fa-pencil-square"></i><span class="title">添加Blog</span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li>
                     <a href="javascript:;">
-                        <i class="icon-credit-card"></i>
+                        <i class="fa fa-credit-card"></i>
                         <span class="title">实验室</span>
                     </a>
                 </li>
                 <li>
                     <a href="javascript:;">
-                        <i class="icon-tags"></i>
-                        <span class="title">标签管理</span>
+                        <i class="fa fa-tags"></i>
+                        <span class="title">标签/分类</span>
                     </a>
                 </li>
                 <li>
                     <a href="javascript:;">
-                        <i class="icon-cogs"></i>
+                        <i class="fa fa-comments"></i>
                         <span class="title">消息中心</span>
                     </a>
                 </li>
                 <li class="complex">
                     <a href="javascript:;">
-                        <i class="icon-bar-chart"></i>
+                        <i class="fa fa-folder-open"></i>
+                        <span class="title">资源管理</span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li title="配置和管理图片">
+                            <a href="javascript:;">
+                                <i class="fa fa-picture-o"></i>
+                                <span class="title">图片管理</span>
+                            </a>
+                        </li>
+                        <li title="配合和管理音乐文件">
+                            <a href="javascript:;">
+                                <i class="fa fa-music"></i>
+                                <span class="title">音乐管理</span>
+                            </a>
+                        </li>
+                        <li title="配置上传大小、可上传文件、上传路径等">
+                            <a href="javascript:;">
+                                <i class="fa fa-folder"></i>
+                                <span class="title">资源配置</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="complex">
+                    <a href="javascript:;">
+                        <i class="fa fa-pie-chart"></i>
                         <span class="title">统计中心</span>
                     </a>
                     <ul class="sub-menu">
                         <li><a href="javascript:;">访问概况</a></li>
-                        @*<li><a href="javascript:;">访客地区</a></li>
-                        *@
                         <li><a href="javascript:;">时段分析</a></li>
                         <li><a href="javascript:;">回复统计</a></li>
                     </ul>
                 </li>
                 <li class="complex open">
                     <a href="javascript:;">
-                        <i class="icon-sitemap"></i>
+                        <i class="fa fa-cogs"></i>
                         <span class="title">配置中心</span>
                     </a>
                     <ul class="sub-menu">
-                        <li><a href="javascript:;">页面配置</a></li>
+                        <li>
+                            <a href="javascript:;">
+                                <i class="fa fa-th-large"></i>
+                                <span class="title">站点配置</span>
+                            </a>
+                        </li>
+                        <li title="监控整个站点的健康状态">
+                            <a href="javascript:;">
+                                <i class="fa fa-connectdevelop"></i>
+                                <span class="title">活动监控</span>
+                            </a>
+                        </li>
+                        <li title="设置访问白名单和黑名单">
+                            <a href="javascript:;">
+                                <i class="fa fa-globe"></i>
+                                <span class="title">访问过滤</span>
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>
         </nav>
         <section class="container-main">
+            <div ms-dom="modal" ms-controller="modal" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button data-dismiss="modal" class="close" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                            <h4 class="modal-title">{{title}}</h4>
+                        </div>
+                        <div class="modal-body">{{body}}</div>
+                    </div>
+                </div>
+            </div>
+
             <div class="page-header">
                 <h2>控制中心&nbsp;&nbsp;<small>Said首台管理首页</small></h2>
             </div>
             <div class="main-context">
                 <div class="row context-chart">
                     <div class="col-md-6">
-                        <h3>用户访问图表，支持年月日走势</h3>
+                        <div class="context-chart">
+                            <div id="uvChart" _echarts_instance_="1440427462974" style="background-color: transparent; cursor: default;"><div style="position: relative; overflow: hidden; width: 809px; height: 400px;"><div style="position: absolute; left: 0px; top: 0px; width: 809px; height: 400px;" width="809" height="400" data-zr-dom-id="bg"></div><canvas style="position: absolute; left: 0px; top: 0px; width: 809px; height: 400px;" width="809" height="400" data-zr-dom-id="0"></canvas><canvas style="position: absolute; left: 0px; top: 0px; width: 809px; height: 400px;" width="809" height="400" data-zr-dom-id="1"></canvas><canvas style="position: absolute; left: 0px; top: 0px; width: 809px; height: 400px;" width="809" height="400" data-zr-dom-id="2"></canvas><canvas style="position: absolute; left: 0px; top: 0px; width: 809px; height: 400px;" width="809" height="400" data-zr-dom-id="3"></canvas><canvas style="position: absolute; left: 0px; top: 0px; width: 809px; height: 400px;" width="809" height="400" data-zr-dom-id="4"></canvas><canvas style="position: absolute; left: 0px; top: 0px; width: 809px; height: 400px;" width="809" height="400" data-zr-dom-id="6"></canvas><canvas style="position: absolute; left: 0px; top: 0px; width: 809px; height: 400px;" width="809" height="400" data-zr-dom-id="8"></canvas><canvas style="position: absolute; left: 0px; top: 0px; width: 809px; height: 400px;" width="809" height="400" data-zr-dom-id="_zrender_hover_"></canvas><div class="echarts-dataview" style="position: absolute; display: block; overflow: hidden; transition: height 0.8s ease 0s, background-color 1s ease 0s; z-index: 1; left: 0px; top: 0px; width: 809px; height: 0px; background-color: rgb(240, 255, 255);"></div><div style="position: absolute; display: none; border-style: solid; white-space: nowrap; transition: left 0.4s ease 0s, top 0.4s ease 0s; background-color: rgba(0, 0, 0, 0.7); border-width: 0px; border-color: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); text-decoration: none; font-family: Arial,Verdana,sans-serif; font-size: 12px; line-height: 18px; font-style: normal; font-weight: normal; padding: 5px; left: 232px; top: 140px;">05:00<br>昨日 : 4<br>今日 : 3</div></div></div>
+                        </div>
                     </div>
                     <div class="col-md-6">
                         <h3>用户访问地区</h3>
@@ -135,10 +199,10 @@
                     <div class="col-md-6">
                         <div class="module module-chart">
                             <h5 class="module-title">
-                                <i class="icon-exchange"></i>
+                                <i class="fa fa-exchange"></i>
                                 <span>回复我的</span>
                                 <span class="module-tools">
-                                    <a href="javascript:;" class="tools-item" title="点击刷新"><i class="icon-refresh"></i></a>
+                                    <a href="javascript:;" class="tools-item" title="点击刷新"><i class="fa fa-refresh"></i></a>
                                 </span>
                             </h5>
                             <ul class="chart-list">
@@ -146,9 +210,10 @@
                                     <div>
                                         <div class="chart-title">
                                             <a href="javascript:;" title="查看他的站点">我的化学浪漫</a>在《<a href="javascript:;">世界很大，风住过这里</a>》中回复您：
+
                                         </div>
                                         <div class="chart-context">
-                                            <i class="icon-quote-left"></i>Less 是一个Css 预编译器,意思指的是它可以扩展Css语言,添加功能如允许变量(variables),混合(mixins),函数(functions) 和许多其他的技术，让你的Css更具维护性，主题性，扩展性。Less 可运行在 Node 环境,浏览器环境和Rhino环境.同时也有3种可选工具供你编译文件和监视任何改变。<i class="icon-quote-right"></i>
+                                            <i class="fa fa-quote-left"></i>Less 是一个Css 预编译器,意思指的是它可以扩展Css语言,添加功能如允许变量(variables),混合(mixins),函数(functions) 和许多其他的技术，让你的Css更具维护性，主题性，扩展性。Less 可运行在 Node 环境,浏览器环境和Rhino环境.同时也有3种可选工具供你编译文件和监视任何改变。<i class="fa fa-quote-right"></i>
                                             <div class="chart-more">
                                                 <time class="reply-date">昨天 22:49:45</time>
                                                 <a href="javascript:;" class="comment-reply btn btn-default btn-xs">回复</a>
@@ -159,9 +224,10 @@
                                         <div class="chart-title">
                                         </div>
                                         <div class="chart-context">
-                                            <i class="icon-quote-left"></i>Less 是一个Css 预编译器,意思指的是它可以扩展Css语言,添加功能如允许变量(variables),混合(mixins),函数(functions) 和许多其他的技术，让你的Css更具维护性，主题性，扩展性。Less 可运行在 Node 环境,浏览器环境和Rhino环境.同时也有3种可选工具供你编译文件和监视任何改变。<i class="icon-quote-right"></i>
+                                            <i class="fa fa-quote-left"></i>Less 是一个Css 预编译器,意思指的是它可以扩展Css语言,添加功能如允许变量(variables),混合(mixins),函数(functions) 和许多其他的技术，让你的Css更具维护性，主题性，扩展性。Less 可运行在 Node 环境,浏览器环境和Rhino环境.同时也有3种可选工具供你编译文件和监视任何改变。<i class="fa fa-quote-right"></i>
                                             <div class="chart-more">
                                                 <time class="reply-date">前天 22:49:45</time><i class="glyphicon glyphicon-hand-left"></i>&nbsp;linkFly
+
                                             </div>
                                         </div>
                                     </div>
@@ -170,9 +236,10 @@
                                     <div>
                                         <div class="chart-title">
                                             <a href="javascript:;" title="查看他的站点">我的化学浪漫</a>在《<a href="javascript:;">linkFly的个人Web</a>》中回复您：
+
                                         </div>
                                         <div class="chart-context">
-                                            <i class="icon-quote-left"></i>Less 是一个Css 预编译器,意思指的是它可以扩展Css语言,添加功能如允许变量(variables),混合(mixins),函数(functions) 和许多其他的技术，让你的Css更具维护性，主题性，扩展性。Less 可运行在 Node 环境,浏览器环境和Rhino环境.同时也有3种可选工具供你编译文件和监视任何改变。<i class="icon-quote-right"></i>
+                                            <i class="fa fa-quote-left"></i>Less 是一个Css 预编译器,意思指的是它可以扩展Css语言,添加功能如允许变量(variables),混合(mixins),函数(functions) 和许多其他的技术，让你的Css更具维护性，主题性，扩展性。Less 可运行在 Node 环境,浏览器环境和Rhino环境.同时也有3种可选工具供你编译文件和监视任何改变。<i class="fa fa-quote-right"></i>
                                             <div class="chart-more">
                                                 <time class="reply-date">昨天 22:49:45</time>
                                             </div>
@@ -183,9 +250,10 @@
                                     <div>
                                         <div class="chart-title">
                                             <a class="anoy-user" href="javascript:;" title="点击查看匿名用户信息">匿名用户</a>在《<a href="javascript:;">世界很大，风住过这里</a>》中回复您：
+
                                         </div>
                                         <div class="chart-context">
-                                            <i class="icon-quote-left"></i>Less 是一个Css 预编译器,意思指的是它可以扩展Css语言,添加功能如允许变量(variables),混合(mixins),函数(functions) 和许多其他的技术，让你的Css更具维护性，主题性，扩展性。Less 可运行在 Node 环境,浏览器环境和Rhino环境.同时也有3种可选工具供你编译文件和监视任何改变。<i class="icon-quote-right"></i>
+                                            <i class="fa fa-quote-left"></i>Less 是一个Css 预编译器,意思指的是它可以扩展Css语言,添加功能如允许变量(variables),混合(mixins),函数(functions) 和许多其他的技术，让你的Css更具维护性，主题性，扩展性。Less 可运行在 Node 环境,浏览器环境和Rhino环境.同时也有3种可选工具供你编译文件和监视任何改变。<i class="fa fa-quote-right"></i>
                                             <div class="chart-more">
                                                 <time class="reply-date">昨天 22:49:45</time>
                                                 <a href="javascript:;" class="comment-reply btn btn-default btn-xs">回复</a>
@@ -197,9 +265,10 @@
                                     <div>
                                         <div class="chart-title">
                                             <a href="javascript:;">我的化学浪漫</a>在《<a href="javascript:;">世界很大，风住过这里</a>》中回复您：
+
                                         </div>
                                         <div class="chart-context">
-                                            <i class="icon-quote-left"></i>Less 是一个Css 预编译器,意思指的是它可以扩展Css语言,添加功能如允许变量(variables),混合(mixins),函数(functions) 和许多其他的技术，让你的Css更具维护性，主题性，扩展性。Less 可运行在 Node 环境,浏览器环境和Rhino环境.同时也有3种可选工具供你编译文件和监视任何改变。<i class="icon-quote-right"></i>
+                                            <i class="fa fa-quote-left"></i>Less 是一个Css 预编译器,意思指的是它可以扩展Css语言,添加功能如允许变量(variables),混合(mixins),函数(functions) 和许多其他的技术，让你的Css更具维护性，主题性，扩展性。Less 可运行在 Node 环境,浏览器环境和Rhino环境.同时也有3种可选工具供你编译文件和监视任何改变。<i class="fa fa-quote-right"></i>
                                             <div class="chart-more">
                                                 <time class="reply-date">昨天 23:30:13</time>
                                             </div>
@@ -212,10 +281,10 @@
                     <div class="col-md-6">
                         <div class="module module-chart">
                             <h5 class="module-title">
-                                <i class="icon-comment"></i>
+                                <i class="fa fa-comments-o"></i>
                                 <span>消息</span>
                                 <span class="module-tools">
-                                    <a href="javascript:;" class="tools-item" title="点击刷新"><i class="icon-refresh"></i></a>
+                                    <a href="javascript:;" class="tools-item" title="点击刷新"><i class="fa fa-refresh"></i></a>
                                 </span>
                             </h5>
                         </div>
@@ -225,9 +294,5 @@
         </section>
     </section>
     <footer></footer>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="Frmework/js/jQuery-2.1.1.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="Frmework/js/bootstrap.min.js"></script>
 </body>
 </html>
