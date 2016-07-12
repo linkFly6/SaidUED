@@ -1,4 +1,7 @@
 @charset "UTF-8";
+body {
+  background-color: #f6f6f1; }
+
 #content {
   width: 900px;
   margin: 0 auto;
@@ -127,10 +130,12 @@
       background-color: white;
       border-bottom: 1px solid #FFF;
       text-align: center;
-      position: relative;
-      left: 100px;
+      /*position: relative;*/
+      /*left: 100px;*/
       padding: 1px 1px 0 1px;
-      display: inline-block; }
+      display: inline-block;
+      float: left;
+      margin-left: 55px; }
       .blog-more-info .blog-more-head .blog-comment-txt span {
         color: #999;
         font-size: 22px;
@@ -141,6 +146,13 @@
         border: none;
         top: 1px;
         left: 1px; }
+    .blog-more-info .blog-more-head .licenses {
+      width: 91px;
+      display: inline-block;
+      height: 31px;
+      overflow: hidden;
+      text-indent: -9999em;
+      background: url("http://tasaid.com/Content/Images/licenses-cc4.png") no-repeat; }
   .blog-more-info .oprater {
     color: #666; }
     .blog-more-info .oprater:hover {
@@ -154,17 +166,19 @@
     position: absolute;
     right: 10px;
     bottom: 5px;
-    overflow: hidden; }
+    overflow: hidden;
+    padding-right: 45px; }
     .blog-more-info .blog-info li {
       float: right;
       color: #999;
-      padding-left: 25px; }
+      padding-left: 25px;
+      vertical-align: bottom; }
       .blog-more-info .blog-info li span {
         background-color: #FFF;
         padding-right: 10px; }
-    .blog-more-info .blog-info li:first-child {
+    .blog-more-info .blog-info .blog-info-date {
       padding-left: 10px; }
-      .blog-more-info .blog-info li:first-child time {
+      .blog-more-info .blog-info .blog-info-date time {
         background-color: #999;
         border-radius: 18px;
         color: #fff;
