@@ -3,14 +3,21 @@
     margin: 0 auto;
     padding: 500px 0 0 0;
 
-    a {
-        color: #4078c0;
 
-        &:hover, &:active {
-            text-decoration: underline;
+
+    article {
+        font: 200 18px/2 "Lantinghei SC","Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+
+        a {
+            color: #4078c0;
+
+            &:hover, &:active {
+                text-decoration: underline;
+            }
         }
     }
 }
+
 
 .content-bg {
     border-bottom: 1px solid white;
@@ -34,18 +41,20 @@
 }
 
 .blog-title {
-    padding: 0 15px 0 27px;
-    font: 2.4em "proxima-nova",微软雅黑,Tahoma,Helvetica,"Lucida Grande",Georgia,Verdana;
+    font-size: 2.1em;
+    padding: 0 15px 0 0;
+    //font: 2.4em "proxima-nova",微软雅黑,Tahoma,Helvetica,"Lucida Grande",Georgia,Verdana;
     line-height: 2em;
     border-bottom: 1px dashed #CCC;
     color: #666;
+    font-weight: 300;
 }
 
 .blog-content {
     padding: 40px 0 20px;
     line-height: 1.6;
-    font-size: 16px;
-    /*font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;*/
+    letter-spacing: 0.5px;
+    //font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
     .highlight-source {
         margin-bottom: 16px;
         padding: 16px;
@@ -74,11 +83,11 @@
     }
 
     h1, h2, h3, h4, h5, h6 {
-        margin-top: 1em;
+        margin-top: 2em;
         margin-bottom: 16px;
-        font-weight: bold;
+        /*font-weight: bold;*/
         line-height: 1.4;
-        font-weight: normal;
+        /*font-weight: normal;*/
     }
 
     hr {
@@ -87,7 +96,7 @@
 
     h1 {
         padding-bottom: 0.3em;
-        font-size: 2.25em;
+        font-size: 2em;
         line-height: 1.2;
         border-bottom: 1px solid #eee;
     }
@@ -139,6 +148,7 @@
     }
 
     p {
+        text-align: justify;
         line-height: 1.8;
         /*text-indent: 2em;*/
         /*
@@ -154,9 +164,9 @@
 
 //more
 .blog-more-info {
-    padding-bottom: 50px;
+    padding: 50px 0;
     position: relative;
-    /*top: -40px;*/
+
     .blog-more-head {
         position: relative;
         bottom: -1px;
@@ -188,19 +198,31 @@
         }
     }
 
-    .blog-info-like, .blog-info-PV {
-        background: url(/Content/Images/work_tool_001.png) no-repeat -334px 8px;
+    .oprater {
+        color: #666;
+
+        &:hover {
+            color: #dd5862;
+        }
+
+        span {
+            padding-left: 2px;
+        }
+
+        &.active {
+            color: #dd5862;
+            cursor: default;
+        }
     }
 
-    .blog-info-like {
-        background-position: -361px 8px;
-    }
 
     .blog-info {
         position: absolute;
         right: 10px;
         bottom: 5px;
         overflow: hidden;
+
+
 
         li {
             float: right;

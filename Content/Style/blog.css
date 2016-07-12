@@ -3,10 +3,12 @@
   width: 900px;
   margin: 0 auto;
   padding: 500px 0 0 0; }
-  #content a {
-    color: #4078c0; }
-    #content a:hover, #content a:active {
-      text-decoration: underline; }
+  #content article {
+    font: 200 18px/2 "Lantinghei SC","Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif; }
+    #content article a {
+      color: #4078c0; }
+      #content article a:hover, #content article a:active {
+        text-decoration: underline; }
 
 .content-bg {
   border-bottom: 1px solid white;
@@ -27,17 +29,17 @@
     background-position: center bottom; }
 
 .blog-title {
-  padding: 0 15px 0 27px;
-  font: 2.4em "proxima-nova",微软雅黑,Tahoma,Helvetica,"Lucida Grande",Georgia,Verdana;
+  font-size: 2.1em;
+  padding: 0 15px 0 0;
   line-height: 2em;
   border-bottom: 1px dashed #CCC;
-  color: #666; }
+  color: #666;
+  font-weight: 300; }
 
 .blog-content {
   padding: 40px 0 20px;
   line-height: 1.6;
-  font-size: 16px;
-  /*font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;*/ }
+  letter-spacing: 0.5px; }
   .blog-content .highlight-source {
     margin-bottom: 16px;
     padding: 16px;
@@ -60,16 +62,16 @@
     background-color: rgba(0, 0, 0, 0.04);
     border-radius: 3px; }
   .blog-content h1, .blog-content h2, .blog-content h3, .blog-content h4, .blog-content h5, .blog-content h6 {
-    margin-top: 1em;
+    margin-top: 2em;
     margin-bottom: 16px;
-    font-weight: bold;
+    /*font-weight: bold;*/
     line-height: 1.4;
-    font-weight: normal; }
+    /*font-weight: normal;*/ }
   .blog-content hr {
     margin: 20px 0; }
   .blog-content h1 {
     padding-bottom: 0.3em;
-    font-size: 2.25em;
+    font-size: 2em;
     line-height: 1.2;
     border-bottom: 1px solid #eee; }
   .blog-content h2 {
@@ -99,6 +101,7 @@
     margin-top: 0;
     margin-bottom: 16px; }
   .blog-content p {
+    text-align: justify;
     line-height: 1.8;
     /*text-indent: 2em;*/
     /*
@@ -110,9 +113,8 @@
     letter-spacing: 1px;*/ }
 
 .blog-more-info {
-  padding-bottom: 50px;
+  padding: 50px 0;
   position: relative;
-  /*top: -40px;*/
   /*comment-context*/ }
   .blog-more-info .blog-more-head {
     position: relative;
@@ -139,10 +141,15 @@
         border: none;
         top: 1px;
         left: 1px; }
-  .blog-more-info .blog-info-like, .blog-more-info .blog-info-PV {
-    background: url(/Content/Images/work_tool_001.png) no-repeat -334px 8px; }
-  .blog-more-info .blog-info-like {
-    background-position: -361px 8px; }
+  .blog-more-info .oprater {
+    color: #666; }
+    .blog-more-info .oprater:hover {
+      color: #dd5862; }
+    .blog-more-info .oprater span {
+      padding-left: 2px; }
+    .blog-more-info .oprater.active {
+      color: #dd5862;
+      cursor: default; }
   .blog-more-info .blog-info {
     position: absolute;
     right: 10px;
