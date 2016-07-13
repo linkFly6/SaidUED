@@ -1,24 +1,144 @@
 ﻿body {
     background-color: #f6f6f1;
+
+    a {
+    }
+
+    .form-control {
+        display: block;
+        width: 100%;
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #555;
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+        -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+        -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    }
+
+    .form-control:focus {
+        border-color: #66afe9;
+        outline: 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+    }
+
+    .form-control::-moz-placeholder {
+        color: #999;
+        opacity: 1;
+    }
+
+    .form-control:-ms-input-placeholder {
+        color: #999;
+    }
+
+    .form-control::-webkit-input-placeholder {
+        color: #999;
+    }
+
+    .form-control[disabled],
+    .form-control[readonly],
+    fieldset[disabled] .form-control {
+        cursor: not-allowed;
+        background-color: #eee;
+        opacity: 1;
+    }
 }
 
 #content {
+    padding: 500px 0 0 0;
+    margin-bottom: 0;
+}
+
+.center {
     width: 900px;
     margin: 0 auto;
-    padding: 500px 0 0 0;
+    position: relative;
 
+    a {
+        color: #4078c0;
 
+        &:hover, &:active {
+            text-decoration: underline;
+        }
+    }
+}
 
-    article {
-        font: 200 18px/2 "Lantinghei SC","Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+.nav {
+    width: 255px;
+    overflow: hidden;
+    /*transition: all .2s ease;*/
+    /*max-width: 255px;*/
+    position: absolute;
+    right: -300px;
+    top: 0;
+    z-index: 4;
+
+    &.fixed {
+        position: fixed;
+        top: 0;
+        right: inherit;
+    }
+
+    .nav-title {
+        padding: 10px 0 14px 14px;
+        font-size: 16px;
+    }
+
+    .nav-bg {
+        position: absolute;
+        display: block;
+        width: 100%;
+        line-height: 2;
+        background-color: #f3f3f3;
+        border-left: 3px solid #649adf;
+        z-index: 1;
+        top: 0;
+        left: 0;
+    }
+
+    .an-c {
+        position: relative;
+    }
+
+    .an-body {
+        padding: 0;
+        border-left: 3px solid #EEE;
+
+        ul {
+            padding-left: 15px;
+        }
+    }
+
+    .anb-box {
+        position: relative;
+        z-index: 6;
+
+        li {
+            line-height: 2;
+        }
 
         a {
-            color: #4078c0;
-
-            &:hover, &:active {
-                text-decoration: underline;
-            }
+            display: block;
+            color: #649adf;
         }
+    }
+}
+
+
+.blog-article {
+    position: relative;
+
+
+    .html {
+        font: 200 18px/2 "Lantinghei SC","Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
     }
 }
 
@@ -202,15 +322,6 @@
                 left: 1px;
             }
         }
-
-        .licenses {
-            width: 91px;
-            display: inline-block;
-            height: 31px;
-            overflow: hidden;
-            text-indent: -9999em;
-            background: url('http://tasaid.com/Content/Images/licenses-cc4.png') no-repeat;
-        }
     }
 
     .oprater {
@@ -234,16 +345,19 @@
     .blog-info {
         position: absolute;
         right: 10px;
-        bottom: 5px;
+        /*bottom: 5px;*/
         overflow: hidden;
         padding-right: 45px;
 
+        .bi-l {
+            padding-right: 15px;
+        }
 
         li {
-            float: right;
+            display: inline-block;
             color: #999;
-            padding-left: 25px;
-            vertical-align: bottom;
+            padding-left: 10px;
+            vertical-align: middle;
 
             span {
                 background-color: #FFF;
@@ -270,12 +384,8 @@
         padding-top: 1px;
         padding: 35px 55px;
 
-        .blog-comment-info input, .cmt-context {
-            border: 1px solid #CCC;
-        }
-
         .blog-comment-info {
-            padding-bottom: 15px;
+            padding-bottom: 10px;
             overflow: hidden;
         }
 
@@ -283,10 +393,7 @@
             display: inline-block;
         }
 
-        input {
-            width: 300px;
-            border-radius: 3px;
-        }
+
 
         input[type=checkbox] {
             vertical-align: middle;
@@ -315,7 +422,6 @@
             min-height: 80px;
             width: 100%;
             border-radius: 3px 3px 0 0;
-            border: 1px solid #CCC;
         }
         /*comment*/
         .comment-more-bar {
@@ -405,16 +511,10 @@
             margin-left: 15px;
             color: #666;
             opacity: 0.65;
-        }
 
-        .ct-reply:before, .cr-reply:before {
-            background: url("/Content/Images/icon-player.png") no-repeat scroll -50px -60px rgba(0, 0, 0, 0);
-            content: '';
-            display: inline-block;
-            width: 14px;
-            height: 16px;
-            vertical-align: middle;
-            margin-right: 4px;
+            .fa {
+                padding-right: 5px;
+            }
         }
 
         .ct-reply:hover, .cr-reply:hover {
@@ -447,51 +547,11 @@
         .reply-bar {
             padding: 15px 0;
         }
-
-        .reply-bar .blog-comment-info input {
-            width: 285px;
-        }
-        /*page-btn*/
-        .blog-page-btn {
-            background: url(/Content/Images/ico_sliding.png) no-repeat scroll 0 0 rgba(0, 0, 0, 0);
-            height: 65px;
-            margin-top: -36px;
-            overflow: hidden;
-            position: fixed;
-            text-indent: 100%;
-            top: 40%;
-            white-space: nowrap;
-            width: 40px;
-            z-index: 10;
-            display: inline;
-            transition: none;
-            display: none;
-        }
-
-        .blog-page-btn:hover {
-            transition: none;
-        }
-
-        .blog-prev {
-            background-position: 0 -432px;
-            left: 30px;
-        }
-
-        .blog-prev:hover {
-            background-position: 0 -498px;
-        }
-
-        .blog-next {
-            background-position: -80px -432px;
-            right: 30px;
-        }
-
-        .blog-next:hover {
-            background-position: -80px -498px;
-        }
         /*footer*/
-        #said-footer {
-            padding-bottom: 40px;
-        }
     }
+}
+
+#said-footer {
+    padding-bottom: 50px;
+    background: #fff;
 }
