@@ -39,12 +39,26 @@ body {
 
 #content {
   padding: 500px 0 0 0;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  overflow: hidden; }
 
 .center {
-  width: 900px;
-  margin: 0 auto;
   position: relative; }
+  .center .b-null-block {
+    float: left;
+    width: 50%;
+    height: 1px;
+    margin-left: -450px; }
+  .center .b-m {
+    max-width: 900px;
+    min-width: 640px;
+    float: left; }
+  .center .b-n {
+    padding-left: 40px;
+    float: right;
+    margin-right: -450px;
+    width: 50%;
+    position: relative; }
   .center a {
     color: #4078c0; }
     .center a:hover, .center a:active {
@@ -56,13 +70,10 @@ body {
   /*transition: all .2s ease;*/
   /*max-width: 255px;*/
   position: absolute;
-  right: -300px;
-  top: 0;
   z-index: 4; }
   .nav.fixed {
     position: fixed;
-    top: 0;
-    right: inherit; }
+    top: 10px; }
   .nav .nav-title {
     padding: 10px 0 14px 14px;
     font-size: 16px; }
@@ -373,5 +384,3 @@ body {
 #said-footer {
   padding-bottom: 50px;
   background: #fff; }
-
-/*# sourceMappingURL=blog.css.map */

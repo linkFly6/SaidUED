@@ -55,12 +55,32 @@
 #content {
     padding: 500px 0 0 0;
     margin-bottom: 0;
+    overflow: hidden;
 }
 
 .center {
-    width: 900px;
-    margin: 0 auto;
     position: relative;
+    //左边
+    .b-null-block {
+        float: left;
+        width: 50%;
+        height: 1px;
+        margin-left: -450px;
+    }
+    //中间正文
+    .b-m {
+        max-width: 900px;
+        min-width: 640px;
+        float: left;
+    }
+    //右侧导航
+    .b-n {
+        padding-left: 40px;
+        float: right;
+        margin-right: -450px;
+        width: 50%;
+        position: relative;
+    }
 
     a {
         color: #4078c0;
@@ -77,14 +97,11 @@
     /*transition: all .2s ease;*/
     /*max-width: 255px;*/
     position: absolute;
-    right: -300px;
-    top: 0;
     z-index: 4;
 
     &.fixed {
         position: fixed;
-        top: 0;
-        right: inherit;
+        top: 10px;
     }
 
     .nav-title {
