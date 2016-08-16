@@ -1,7 +1,8 @@
 ﻿.said-content {
     position: relative;
     /*max-width: 1280px;*/
-    max-width: 1000px;
+    max-width: 825px;
+    min-width: initial;
 }
 /*.said-content a { color: #028cd3; }*/
 .said-blog-notfound {
@@ -12,67 +13,56 @@
 .said-blog-list {
     position: relative;
     padding-right: 0;
-    margin-right: 290px;
+    /*margin-right: 290px;*/
 }
 
-.said-blog-title {
-    font-size: 18px;
-    line-height: 22px;
-    padding: 21px 0 10px 10px;
-    border-bottom: 1px solid #e6e6e6;
-}
 
-.said-blog-title span {
-    border-left: 3px solid #75b4f4;
-    padding-right: 10px;
-    vertical-align: middle;
-    font-size: 13px;
+.blog-head {
+    .b-btn {
+        float: right;
+    }
+
+    .said-blog-title {
+        float: left;
+        font-size: 22px;
+        line-height: 22px;
+        padding: 21px 0 10px 10px;
+        overflow: hidden;
+    }
+
+    .said-blog-title span {
+        border-left: 3px solid #75b4f4;
+        padding-right: 10px;
+        vertical-align: middle;
+        font-size: 22px;
+    }
 }
 
 .said-blog-content, .said-blog-item {
-    padding: 10px 10px 35px;
+    padding: 10px 10px 10px;
     overflow: hidden;
 }
 
 .said-blog-content {
-    .blog-box {
-        padding: 40px 30px;
-
-        .b-year {
-            font-size: 18px;
-            color: #AAA;
-            padding: 30px 0 0;
-
-            &:first-child {
-                padding: 0 0 10px;
-            }
-        }
-
-        .b-month {
-            width: 80px;
-            /*font-weight: bold;*/
-            /*color: #AAA;*/
-        }
-
-        .b-month, .b-main {
-            display: inline-block;
-            vertical-align: bottom;
-        }
-
-        .b-item {
-            padding: 10px 0;
-        }
-
+    /*border-left: 1px solid #eee;*/
+    /*border-right: 1px solid #eee;*/
+    .b-item {
+        padding: 12px 0;
+        border-bottom: 1px solid #eee;
+        /*&:last-child {
+        }*/
         .b-main {
-            /*max-width: 540px;*/
-            width: 100%;
+            padding-left: 12px;
+            border-left: 1px solid #f3f3f3;
+            overflow: hidden;
         }
 
         .b-title {
-            color: #057dbb;
+            color: #333;
             font-size: 16px;
 
             &:hover, &:active {
+                color: #057dbb;
                 text-decoration: underline;
             }
 
@@ -81,21 +71,68 @@
             }
         }
 
+        .b-summary {
+            color: #777;
+            padding: 3px 0;
+        }
+
+        .b-more {
+            text-align: center;
+            color: #777;
+
+            small {
+                font-size: 12px;
+                display: block;
+                line-height: 1.2;
+            }
+
+            margin-right: 12px;
+            width: 45px;
+            height: 40px;
+            background: #f0f0f0;
+            float: left;
+        }
+    }
+
+    .blog-box {
+        .b-year {
+            text-align: center;
+            font-size: 18px;
+            color: #AAA;
+            /*padding: 30px 0 0;
+            border-top: 1px solid #CCC;
+            padding: 15px 0 10px;*/
+            margin: 15px 0;
+            padding-bottom: 10px;
+
+            .by-txt {
+                padding: 10px;
+                border-bottom: 3px solid #009A61;
+            }
+
+            &:first-child {
+                /*
+                padding: 0;
+                padding-bottom: 10px;
+                border: none;
+                    */
+                margin-top: 0;
+            }
+        }
+
         .b-footer {
             padding-bottom: 3px;
+            color: #999;
 
             time {
-                background-color: #CCC;
-                color: #FFF;
-                padding: 1px 12px;
                 border-radius: 8px;
                 font-size: 13px;
-                margin-right: 15px;
+                vertical-align: middle;
             }
 
             a, i {
                 padding: 1px 5px;
-                color: #888;
+                color: #999;
             }
 
             a:hover {
@@ -104,9 +141,9 @@
             }
 
             .b-info {
-                display: inline-block;
-                vertical-align: middle;
-                color: #888;
+                vertical-align: bottom;
+                color: #999;
+                font-size: 13px;
                 padding-left: 5px;
                 transition: color 0.2s ease-in-out 0s;
 
@@ -285,7 +322,7 @@
     float: right;
     top: 0;
     right: 0;
-    padding: 10px;
+    padding: 52px 10px 10px;
 
     .blog-other-content {
         width: 266px;
@@ -304,7 +341,7 @@
 
             .blog-other-title {
                 border: none;
-                background-color: #f9f9f9;
+                /*background-color: #f9f9f9;*/
             }
         }
 
@@ -320,7 +357,7 @@
 
     .blog-other-list {
         li {
-            border-top: 1px solid #f3f3f3;
+            border-top: 1px solid #fff;
             transition: border-color 0.4s ease-in-out 0s;
             border-left: 2px solid #FFF;
 

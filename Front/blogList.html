@@ -72,7 +72,7 @@
         <section id="content">
             <div class="said-content afterClear">
                 <!--【【【【【【【【【【【【【【【【【【【【【【【【【【当said-blog-other的高度超过said-blog-list，就切换成absolute，并开始视差滚动】】】】】】】】】】】】】】】】】】】】】-->
-                <div class="said-blog-other" id="said-other">
+                <div class="said-blog-other" id="said-other" style="display: none;">
                     <div class="blog-other-content">
                         <div class="blog-other-title">分类</div>
                         <ul class="blog-other-list">
@@ -118,7 +118,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="blog-other-content">
+                    <div class="blog-other-content" style="display:none;">
                         <div class="blog-other-title">标签</div>
                         <div class="blog-tag">
                             <a href="javascript:;" class="blog-tag-item">javascript</a><a href="javascript:;" class="blog-tag-item">jQuery</a><a href="javascript:;" class="blog-tag-item">ASP.NET</a><a href="javascript:;" class="blog-tag-item">C#</a><a href="javascript:;" class="blog-tag-item">.NET MVC</a><a href="javascript:;" class="blog-tag-item">Sql</a><a href="javascript:;" class="blog-tag-item">Sql Server</a><a href="javascript:;" class="blog-tag-item">RequireJS</a><a href="javascript:;" class="blog-tag-item">Promise</a><a href="javascript:;" class="blog-tag-item">ES5</a><a href="javascript:;" class="blog-tag-item">ES6</a><a href="javascript:;" class="blog-tag-item">HTML</a><a href="javascript:;" class="blog-tag-item">HTML5</a><a href="javascript:;" class="blog-tag-item">CSS</a><a href="javascript:;" class="blog-tag-item">CSS3</a><a href="javascript:;" class="blog-tag-item">Hack</a><a href="javascript:;" class="blog-tag-item">Sql Server</a><a href="javascript:;" class="blog-tag-item">DDD</a><a href="javascript:;" class="blog-tag-item">领域驱动设计</a>
@@ -239,7 +239,10 @@
                     </div>
                 </div>
                 <div class="said-blog-list" id="said-blog-list">
-                    <h3 class="said-blog-title"><span></span>JavaScript随笔</h3>
+                    <div class="blog-head afterClear">
+                        <h3 class="said-blog-title"><span></span>JavaScript随笔</h3>
+                        <button class="b-btn">查看分类</button>
+                    </div>
                     <div class="said-blog-content">
                         <!--forEach 20一个分页-->
                         <!--<section class="said-blog">
@@ -291,418 +294,42 @@
                         </section>-->
 
                         <section class="blog-box">
-                            <div class="b-year">2016年04月</div>
+                            <div class="b-year"><span class="by-txt">2016年04月</span></div>
                             <article class="b-item">
                                 <!--<div class="b-month"><time>04月 01日</time></div>-->
-                                <div class="b-main said-ellipsis">
-                                    <a href="blog.html" class="b-title">setTimeout为0时setTimeout为0时setTimeout为0时setTimeout为0时setTimeout为0时setTimeout为0时setTimeout为0时setTimeout为0时setTimeout为0时</a>
+                                <div class="b-more"></div>
+                                <div class="b-main">
+                                    <h2 class="b-title said-ellipsis">
+                                        <a href="blog.html" class="b-title">setTimeout为0时setTimeout为0时setTimeout为0时setTimeout为0时</a>
+                                    </h2>
+                                    <div class="b-summary">
+                                        <p>《算法导论》的确是本了不起的书，以我现在的水平即使是开头的几章也难以理解透彻，于是就有了”与其问题越堆积越多，不如停下来整理一下所学“这样的念头。 1. 分治 维基百科——在计算机科学中，分治法是建基于多项</p>
+                                    </div>
+                                    <footer class="b-footer">
+                                        <!--<div class="b-info fa fa-eye" title="浏览"><i>15</i></div>-->
+                                        <span class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">ECMAScript 5</a></span>
+                                        <time title="发布时间">10日&nbsp;星期一</time>
+                                    </footer>
                                 </div>
-                                <footer class="b-footer">
-                                    <time title="发布时间">10日&nbsp;&nbsp;星期一</time>
-                                    <div class="b-info fa fa-eye" title="浏览"><i>15</i></div>
-                                    <div class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">ECMAScript 5</a></div>
-                                    <!--<div class="b-info link fa fa-tags" title="标签">
-                                        <div class="b-t afterClear">
-                                            <a href="javascript:;">随笔</a>
-                                            <a href="javascript:;">javascript</a>
-                                            <a href="javascript:;">javascript</a>
-                                            <a href="javascript:;">javascript</a>
-                                            <a href="javascript:;">javascript</a>
-                                            <a href="javascript:;">javascript</a>
-                                            <a href="javascript:;">javascript</a>
-                                        </div>
-                                    </div>-->
-                                </footer>
                             </article>
                             <article class="b-item">
-                                <div class="b-main said-ellipsis">
-                                    <a href="javascript:;" class="b-title">JavaScript - 如果...没有方法</a>
+                                <div class="b-more">
+                                    <span>10日</span><small>星期一</small>
                                 </div>
-                                <footer class="b-footer">
-                                    <time title="发布时间">12-10&nbsp;&nbsp;星期一</time>
-                                    <div class="b-info fa fa-eye" title="浏览"><i>15</i></div>
-                                    <div class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">ECMAScript 5</a></div>
-                                </footer>
-                            </article>
-                            <div class="b-year">2015年03月</div>
-                            <article class="b-item">
-                                <div class="b-main said-ellipsis">
-                                    <a href="javascript:;" class="b-title">JavaScript异步编程（1）- ECMAScript 6的Promise对象</a>
+                                <div class="b-main">
+                                    <h2 class="b-title said-ellipsis">
+                                        <a href="blog.html" class="b-title">setTimeout为0时setTimeout为0时setTimeout为0时setTimeout为0时</a>
+                                    </h2>
+                                    <div class="b-summary">
+                                        <p>《算法导论》的确是本了不起的书，以我现在的水平即使是开头的几章也难以理解透彻，于是就有了”与其问题越堆积越多，不如停下来整理一下所学“这样的念头。 1. 分治 维基百科——在计算机科学中，分治法是建基于多项</p>
+                                    </div>
+                                    <footer class="b-footer">
+                                        <!--<div class="b-info fa fa-eye" title="浏览"><i>15</i></div>-->
+                                        <span class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">ECMAScript 5</a></span>
+                                        <i class="fa fa-eye" aria-hidden="true"></i>12
+                                    </footer>
                                 </div>
-                                <footer class="b-footer">
-                                    <time title="发布时间">12-10&nbsp;&nbsp;星期一</time>
-                                    <div class="b-info fa fa-eye" title="浏览"><i>1000</i></div>
-                                    <div class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">ECMAScript 5</a></div>
-                                </footer>
                             </article>
-                            <article class="b-item">
-                                <div class="b-main said-ellipsis">
-                                    <a href="javascript:;" class="b-title">记jQuery.fn.show的一次踩坑和问题排查</a>
-                                </div>
-                                <footer class="b-footer">
-                                    <time title="发布时间">12-10&nbsp;&nbsp;星期一</time>
-                                    <div class="b-info fa fa-eye" title="浏览"><i>15</i></div>
-                                    <div class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">jQuery</a></div>
-                                </footer>
-                            </article>
-                            <article class="b-item">
-                                <div class="b-main said-ellipsis">
-                                    <a href="javascript:;" class="b-title">jQuery源码解读 - 数据缓存系统：jQuery.data</a>
-                                </div>
-                                <footer class="b-footer">
-                                    <time title="发布时间">12-10&nbsp;&nbsp;星期一</time>
-                                    <div class="b-info fa fa-eye" title="浏览"><i>120</i></div>
-                                    <div class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">NodeJS</a></div>
-                                </footer>
-                            </article>
-                            <article class="b-item">
-                                <div class="b-main said-ellipsis">
-                                    <a href="javascript:;" class="b-title">编写更加稳定/可读的javascript代码</a>
-                                </div>
-                                <footer class="b-footer">
-                                    <time title="发布时间">12-10&nbsp;&nbsp;星期一</time>
-                                    <div class="b-info fa fa-eye" title="浏览"><i>1</i></div>
-                                    <div class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">requireJS</a></div>
-                                </footer>
-                            </article>
-                            <article class="b-item">
-                                <div class="b-main said-ellipsis">
-                                    <a href="javascript:;" class="b-title">从angularJS看MVVM</a>
-                                </div>
-                                <footer class="b-footer">
-                                    <time title="发布时间">12-10&nbsp;&nbsp;星期一</time>
-                                    <div class="b-info fa fa-eye" title="浏览"><i>1500</i></div>
-                                    <div class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">.net MVC</a></div>
-                                </footer>
-                            </article>
-                            <article class="b-item">
-                                <div class="b-main said-ellipsis">
-                                    <a href="javascript:;" class="b-title">JavaScript下的setTimeout(fn,0)意味着什么？</a>
-                                </div>
-                                <footer class="b-footer">
-                                    <time title="发布时间">12-10&nbsp;&nbsp;星期一</time>
-                                    <div class="b-info fa fa-eye" title="浏览"><i>15</i></div>
-                                    <div class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">Javascript</a></div>
-                                </footer>
-                            </article>
-                            <article class="b-item">
-                                <div class="b-main said-ellipsis">
-                                    <a href="javascript:;" class="b-title">记jQuery.fn.show的一次踩坑和问题排查</a>
-                                </div>
-                                <footer class="b-footer">
-                                    <time title="发布时间">12-10&nbsp;&nbsp;星期一</time>
-                                    <div class="b-info fa fa-eye" title="浏览"><i>15</i></div>
-                                    <div class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">ECMAScript 5</a></div>
-                                </footer>
-                            </article>
-                            <article class="b-item">
-                                <div class="b-main said-ellipsis">
-                                    <a href="javascript:;" class="b-title">Javascript - Arraylike的7种实现</a>
-                                </div>
-                                <footer class="b-footer">
-                                    <time title="发布时间">12-10&nbsp;&nbsp;星期一</time>
-                                    <div class="b-info fa fa-eye" title="浏览"><i>16480</i></div>
-                                    <div class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">HTML</a></div>
-                                </footer>
-                            </article>
-
-                            <article class="b-item">
-                                <div class="b-main said-ellipsis">
-                                    <a href="javascript:;" class="b-title">读jQuery源码 - Deferred</a>
-                                </div>
-                                <footer class="b-footer">
-                                    <time title="发布时间">12-10&nbsp;&nbsp;星期一</time>
-                                    <div class="b-info fa fa-eye" title="浏览"><i>187</i></div>
-                                    <div class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">CSS</a></div>
-                                </footer>
-                            </article>
-
-                            <article class="b-item">
-                                <div class="b-main said-ellipsis">
-                                    <a href="javascript:;" class="b-title">读jQuery源码 - Deferred</a>
-                                </div>
-                                <footer class="b-footer">
-                                    <time title="发布时间">12-10&nbsp;&nbsp;星期一</time>
-                                    <div class="b-info fa fa-eye" title="浏览"><i>187</i></div>
-                                    <div class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">CSS</a></div>
-                                </footer>
-                            </article>
-
-                            <article class="b-item">
-                                <div class="b-main said-ellipsis">
-                                    <a href="javascript:;" class="b-title">读jQuery源码 - Deferred</a>
-                                </div>
-                                <footer class="b-footer">
-                                    <time title="发布时间">12-10&nbsp;&nbsp;星期一</time>
-                                    <div class="b-info fa fa-eye" title="浏览"><i>187</i></div>
-                                    <div class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">CSS</a></div>
-                                </footer>
-                            </article>
-
-                            <article class="b-item">
-                                <div class="b-main said-ellipsis">
-                                    <a href="javascript:;" class="b-title">读jQuery源码 - Deferred</a>
-                                </div>
-                                <footer class="b-footer">
-                                    <time title="发布时间">12-10&nbsp;&nbsp;星期一</time>
-                                    <div class="b-info fa fa-eye" title="浏览"><i>187</i></div>
-                                    <div class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">CSS</a></div>
-                                </footer>
-                            </article>
-
-                            <article class="b-item">
-                                <div class="b-main said-ellipsis">
-                                    <a href="javascript:;" class="b-title">读jQuery源码 - Deferred</a>
-                                </div>
-                                <footer class="b-footer">
-                                    <time title="发布时间">12-10&nbsp;&nbsp;星期一</time>
-                                    <div class="b-info fa fa-eye" title="浏览"><i>187</i></div>
-                                    <div class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">CSS</a></div>
-                                </footer>
-                            </article>
-
-                            <article class="b-item">
-                                <div class="b-main said-ellipsis">
-                                    <a href="javascript:;" class="b-title">读jQuery源码 - Deferred</a>
-                                </div>
-                                <footer class="b-footer">
-                                    <time title="发布时间">12-10&nbsp;&nbsp;星期一</time>
-                                    <div class="b-info fa fa-eye" title="浏览"><i>187</i></div>
-                                    <div class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">CSS</a></div>
-                                </footer>
-                            </article>
-
-                            <article class="b-item">
-                                <div class="b-main said-ellipsis">
-                                    <a href="javascript:;" class="b-title">读jQuery源码 - Deferred</a>
-                                </div>
-                                <footer class="b-footer">
-                                    <time title="发布时间">12-10&nbsp;&nbsp;星期一</time>
-                                    <div class="b-info fa fa-eye" title="浏览"><i>187</i></div>
-                                    <div class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">CSS</a></div>
-                                </footer>
-                            </article>
-
-                            <article class="b-item">
-                                <div class="b-main said-ellipsis">
-                                    <a href="javascript:;" class="b-title">读jQuery源码 - Deferred</a>
-                                </div>
-                                <footer class="b-footer">
-                                    <time title="发布时间">12-10&nbsp;&nbsp;星期一</time>
-                                    <div class="b-info fa fa-eye" title="浏览"><i>187</i></div>
-                                    <div class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">CSS</a></div>
-                                </footer>
-                            </article>
-
-                            <article class="b-item">
-                                <div class="b-main said-ellipsis">
-                                    <a href="javascript:;" class="b-title">读jQuery源码 - Deferred</a>
-                                </div>
-                                <footer class="b-footer">
-                                    <time title="发布时间">12-10&nbsp;&nbsp;星期一</time>
-                                    <div class="b-info fa fa-eye" title="浏览"><i>187</i></div>
-                                    <div class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">CSS</a></div>
-                                </footer>
-                            </article>
-
-                            <article class="b-item">
-                                <div class="b-main said-ellipsis">
-                                    <a href="javascript:;" class="b-title">读jQuery源码 - Deferred</a>
-                                </div>
-                                <footer class="b-footer">
-                                    <time title="发布时间">12-10&nbsp;&nbsp;星期一</time>
-                                    <div class="b-info fa fa-eye" title="浏览"><i>187</i></div>
-                                    <div class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">CSS</a></div>
-                                </footer>
-                            </article>
-
-                            <article class="b-item">
-                                <div class="b-main said-ellipsis">
-                                    <a href="javascript:;" class="b-title">读jQuery源码 - Deferred</a>
-                                </div>
-                                <footer class="b-footer">
-                                    <time title="发布时间">12-10&nbsp;&nbsp;星期一</time>
-                                    <div class="b-info fa fa-eye" title="浏览"><i>187</i></div>
-                                    <div class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">CSS</a></div>
-                                </footer>
-                            </article>
-
-                            <article class="b-item">
-                                <div class="b-main said-ellipsis">
-                                    <a href="javascript:;" class="b-title">读jQuery源码 - Deferred</a>
-                                </div>
-                                <footer class="b-footer">
-                                    <time title="发布时间">12-10&nbsp;&nbsp;星期一</time>
-                                    <div class="b-info fa fa-eye" title="浏览"><i>187</i></div>
-                                    <div class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">CSS</a></div>
-                                </footer>
-                            </article>
-
-                            <article class="b-item">
-                                <div class="b-main said-ellipsis">
-                                    <a href="javascript:;" class="b-title">读jQuery源码 - Deferred</a>
-                                </div>
-                                <footer class="b-footer">
-                                    <time title="发布时间">12-10&nbsp;&nbsp;星期一</time>
-                                    <div class="b-info fa fa-eye" title="浏览"><i>187</i></div>
-                                    <div class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">CSS</a></div>
-                                </footer>
-                            </article>
-
-                            <article class="b-item">
-                                <div class="b-main said-ellipsis">
-                                    <a href="javascript:;" class="b-title">读jQuery源码 - Deferred</a>
-                                </div>
-                                <footer class="b-footer">
-                                    <time title="发布时间">12-10&nbsp;&nbsp;星期一</time>
-                                    <div class="b-info fa fa-eye" title="浏览"><i>187</i></div>
-                                    <div class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">CSS</a></div>
-                                </footer>
-                            </article>
-
-                            <article class="b-item">
-                                <div class="b-main said-ellipsis">
-                                    <a href="javascript:;" class="b-title">读jQuery源码 - Deferred</a>
-                                </div>
-                                <footer class="b-footer">
-                                    <time title="发布时间">12-10&nbsp;&nbsp;星期一</time>
-                                    <div class="b-info fa fa-eye" title="浏览"><i>187</i></div>
-                                    <div class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">CSS</a></div>
-                                </footer>
-                            </article>
-
-                            <article class="b-item">
-                                <div class="b-main said-ellipsis">
-                                    <a href="javascript:;" class="b-title">读jQuery源码 - Deferred</a>
-                                </div>
-                                <footer class="b-footer">
-                                    <time title="发布时间">12-10&nbsp;&nbsp;星期一</time>
-                                    <div class="b-info fa fa-eye" title="浏览"><i>187</i></div>
-                                    <div class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">CSS</a></div>
-                                </footer>
-                            </article>
-
-                            <article class="b-item">
-                                <div class="b-main said-ellipsis">
-                                    <a href="javascript:;" class="b-title">读jQuery源码 - Deferred</a>
-                                </div>
-                                <footer class="b-footer">
-                                    <time title="发布时间">12-10&nbsp;&nbsp;星期一</time>
-                                    <div class="b-info fa fa-eye" title="浏览"><i>187</i></div>
-                                    <div class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">CSS</a></div>
-                                </footer>
-                            </article>
-
-                            <article class="b-item">
-                                <div class="b-main said-ellipsis">
-                                    <a href="javascript:;" class="b-title">读jQuery源码 - Deferred</a>
-                                </div>
-                                <footer class="b-footer">
-                                    <time title="发布时间">12-10&nbsp;&nbsp;星期一</time>
-                                    <div class="b-info fa fa-eye" title="浏览"><i>187</i></div>
-                                    <div class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">CSS</a></div>
-                                </footer>
-                            </article>
-
-                            <article class="b-item">
-                                <div class="b-main said-ellipsis">
-                                    <a href="javascript:;" class="b-title">读jQuery源码 - Deferred</a>
-                                </div>
-                                <footer class="b-footer">
-                                    <time title="发布时间">12-10&nbsp;&nbsp;星期一</time>
-                                    <div class="b-info fa fa-eye" title="浏览"><i>187</i></div>
-                                    <div class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">CSS</a></div>
-                                </footer>
-                            </article>
-
-                            <article class="b-item">
-                                <div class="b-main said-ellipsis">
-                                    <a href="javascript:;" class="b-title">读jQuery源码 - Deferred</a>
-                                </div>
-                                <footer class="b-footer">
-                                    <time title="发布时间">12-10&nbsp;&nbsp;星期一</time>
-                                    <div class="b-info fa fa-eye" title="浏览"><i>187</i></div>
-                                    <div class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">CSS</a></div>
-                                </footer>
-                            </article>
-
-                            <article class="b-item">
-                                <div class="b-main said-ellipsis">
-                                    <a href="javascript:;" class="b-title">读jQuery源码 - Deferred</a>
-                                </div>
-                                <footer class="b-footer">
-                                    <time title="发布时间">12-10&nbsp;&nbsp;星期一</time>
-                                    <div class="b-info fa fa-eye" title="浏览"><i>187</i></div>
-                                    <div class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">CSS</a></div>
-                                </footer>
-                            </article>
-
-                            <article class="b-item">
-                                <div class="b-main said-ellipsis">
-                                    <a href="javascript:;" class="b-title">读jQuery源码 - Deferred</a>
-                                </div>
-                                <footer class="b-footer">
-                                    <time title="发布时间">12-10&nbsp;&nbsp;星期一</time>
-                                    <div class="b-info fa fa-eye" title="浏览"><i>187</i></div>
-                                    <div class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">CSS</a></div>
-                                </footer>
-                            </article>
-
-                            <article class="b-item">
-                                <div class="b-main said-ellipsis">
-                                    <a href="javascript:;" class="b-title">读jQuery源码 - Deferred</a>
-                                </div>
-                                <footer class="b-footer">
-                                    <time title="发布时间">12-10&nbsp;&nbsp;星期一</time>
-                                    <div class="b-info fa fa-eye" title="浏览"><i>187</i></div>
-                                    <div class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">CSS</a></div>
-                                </footer>
-                            </article>
-
-                            <article class="b-item">
-                                <div class="b-main said-ellipsis">
-                                    <a href="javascript:;" class="b-title">读jQuery源码 - Deferred</a>
-                                </div>
-                                <footer class="b-footer">
-                                    <time title="发布时间">12-10&nbsp;&nbsp;星期一</time>
-                                    <div class="b-info fa fa-eye" title="浏览"><i>187</i></div>
-                                    <div class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">CSS</a></div>
-                                </footer>
-                            </article>
-
-                            <article class="b-item">
-                                <div class="b-main said-ellipsis">
-                                    <a href="javascript:;" class="b-title">读jQuery源码 - Deferred</a>
-                                </div>
-                                <footer class="b-footer">
-                                    <time title="发布时间">12-10&nbsp;&nbsp;星期一</time>
-                                    <div class="b-info fa fa-eye" title="浏览"><i>187</i></div>
-                                    <div class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">CSS</a></div>
-                                </footer>
-                            </article>
-
-                            <article class="b-item">
-                                <div class="b-main said-ellipsis">
-                                    <a href="javascript:;" class="b-title">读jQuery源码 - Deferred</a>
-                                </div>
-                                <footer class="b-footer">
-                                    <time title="发布时间">12-10&nbsp;&nbsp;星期一</time>
-                                    <div class="b-info fa fa-eye" title="浏览"><i>187</i></div>
-                                    <div class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">CSS</a></div>
-                                </footer>
-                            </article>
-
-                            <article class="b-item">
-                                <div class="b-main said-ellipsis">
-                                    <a href="javascript:;" class="b-title">读jQuery源码 - Deferred</a>
-                                </div>
-                                <footer class="b-footer">
-                                    <time title="发布时间">12-10&nbsp;&nbsp;星期一</time>
-                                    <div class="b-info fa fa-eye" title="浏览"><i>187</i></div>
-                                    <div class="b-info link fa fa-th-large" title="分类"><a href="javascript:;">CSS</a></div>
-                                </footer>
-                            </article>
-
                         </section>
                     </div>
                     <!--<ul style="" class="loading-line">
