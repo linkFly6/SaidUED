@@ -1,40 +1,197 @@
-﻿.said-content {
+﻿$pageWidth: 825px;
+
+.said-content {
     position: relative;
-    /*max-width: 1280px;*/
-    max-width: 825px;
+    max-width: $pageWidth;
     min-width: initial;
 }
 /*.said-content a { color: #028cd3; }*/
 .said-blog-notfound {
     position: relative;
-    padding-right: 400px;
+    padding: 40px 0;
 }
 
-.said-blog-list {
-    position: relative;
-    padding-right: 0;
-    /*margin-right: 290px;*/
+#content {
+    padding: 0 0 40px;
 }
 
 
 .blog-head {
-    .b-btn {
-        float: right;
+    padding-top: 40px;
+
+
+
+    .blog-cate-head {
+        max-width: $pageWidth;
+        margin: 0 auto;
+    }
+
+    .blog-category {
+        height: 0;
+        transition: 0.2s 0.2s;
+        overflow: hidden;
+        border-bottom: 1px solid #eee;
+
+        .blog-cate-box {
+            background: #fafafa;
+            box-shadow: inset 0 1px 1px 0 #c7c7c7;
+            /*background: url(../Images/blcbg.jpg) repeat;*/
+        }
+
+        .blog-cate-main {
+            padding: 10px 0;
+            max-width: $pageWidth;
+            margin: 0 auto;
+        }
+
+        .blog-other-list {
+            overflow: hidden;
+
+            .blog-other-icon {
+                width: 20px;
+                height: 20px;
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 10px;
+            }
+
+            li {
+                float: left;
+
+                &:hover {
+                    a {
+                        /*color: #666;*/
+                        /*text-decoration: underline;*/
+                    }
+
+                    img {
+                        transform: rotate(360deg) scale(1.2);
+                        transition: all 0.4s ease-in-out 0s;
+                    }
+                }
+
+                img {
+                    transition: all 0.4s ease-in-out 0s;
+                }
+
+                a {
+                    display: block;
+                    padding-left: 17px;
+                    line-height: 38px;
+                    color: #666;
+                }
+            }
+        }
     }
 
     .said-blog-title {
-        float: left;
-        font-size: 22px;
+        font-size: 20px;
         line-height: 22px;
         padding: 21px 0 10px 10px;
         overflow: hidden;
+
+        &:before {
+            content: '';
+            position: relative;
+            top: -1px;
+            border-left: 3px solid #75b4f4;
+            padding-right: 10px;
+            vertical-align: middle;
+            font-size: 22px;
+        }
     }
 
-    .said-blog-title span {
-        border-left: 3px solid #75b4f4;
-        padding-right: 10px;
-        vertical-align: middle;
-        font-size: 22px;
+    %icoChild {
+        display: block;
+        width: 17px;
+        height: 1px;
+        background: #666;
+        position: absolute;
+        left: 5px;
+        top: 13px;
+        z-index: 1;
+        transition: 0.2s 0.2s;
+    }
+
+    %icoParent {
+        position: absolute;
+        z-index: 3;
+        top: 0;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        transition: 0.2s 0.2s;
+    }
+
+    .b-cate-btn {
+        float: right;
+        font-size: 16px;
+        position: relative;
+        color: #666;
+        top: -3px;
+
+        .b-cate-txt {
+            vertical-align: middle;
+        }
+
+        .ico-l {
+            display: inline-block;
+            position: relative;
+            z-index: 3;
+            width: 30px;
+            height: 30px;
+            right: 3px;
+            top: 2px;
+            overflow: hidden;
+            vertical-align: middle;
+            cursor: pointer;
+            transition: 0.2s 0.2s;
+
+            .ico-l-a {
+                @extend %icoParent;
+                transform: rotate(0);
+            }
+
+            .ico-l-b {
+                @extend %icoChild;
+                transform: translateY(-4px);
+            }
+
+            .ico-l-c {
+                @extend %icoParent;
+                transform: rotate(0);
+            }
+
+            .ico-l-d {
+                @extend %icoChild;
+                transform: translateY(4px);
+            }
+        }
+
+        &.open {
+            .ico-l {
+                top: 0;
+
+                .ico-l-a {
+                    transform: rotate(45deg);
+                }
+
+                .ico-l-b {
+                    background-color: #999;
+                    width: 18px;
+                    transform: translateY(2px);
+                }
+
+                .ico-l-c {
+                    transform: rotate(-45deg);
+                }
+
+                .ico-l-d {
+                    width: 18px;
+                    transform: translateY(0px);
+                }
+            }
+        }
     }
 }
 
@@ -44,13 +201,17 @@
 }
 
 .said-blog-content {
-    /*border-left: 1px solid #eee;*/
-    /*border-right: 1px solid #eee;*/
+    padding: 40px 0;
+
     .b-item {
         padding: 12px 0;
         border-bottom: 1px solid #eee;
         /*&:last-child {
         }*/
+        &:last-child {
+            border-bottom: none;
+        }
+
         .b-main {
             padding-left: 12px;
             border-left: 1px solid #f3f3f3;
@@ -59,7 +220,7 @@
 
         .b-title {
             color: #333;
-            font-size: 16px;
+            font-size: 20px;
 
             &:hover, &:active {
                 color: #057dbb;
@@ -73,7 +234,7 @@
 
         .b-summary {
             color: #777;
-            padding: 3px 0;
+            padding: 9px 0 5px;
         }
 
         .b-more {
@@ -107,7 +268,7 @@
 
             .by-txt {
                 padding: 10px;
-                border-bottom: 3px solid #009A61;
+                border-bottom: 3px solid #75b4f4; //009A61
             }
 
             &:first-child {
@@ -285,9 +446,7 @@
     padding: 15px 0;
     text-align: center;
 
-    img, span {
-        vertical-align: bottom;
-    }
+
 
     span {
         font-size: 1.6em;
@@ -300,242 +459,25 @@
     text-align: center;
 
     h4 {
-        font-size: 16px;
+        font-size: 18px;
+        padding-bottom: 10px;
     }
 
     li {
         a {
             line-height: 30px;
             font-size: 16px;
+            color: #333;
+            font-weight: 200;
 
             &:hover {
                 text-decoration: underline;
+                color: #057dbb;
+            }
+
+            &:visited {
+                color: #c03980;
             }
         }
     }
-}
-
-
-
-/*right other*/
-.said-blog-other {
-    float: right;
-    top: 0;
-    right: 0;
-    padding: 52px 10px 10px;
-
-    .blog-other-content {
-        width: 266px;
-        margin-bottom: 30px;
-
-        a {
-            color: #555;
-
-            &:hover {
-                color: #028cd3;
-            }
-        }
-        /*如果右侧项目栏第一需要边框，把first-child去掉即可*/
-        &:first-child {
-            border: 1px solid #e0e0e0;
-
-            .blog-other-title {
-                border: none;
-                /*background-color: #f9f9f9;*/
-            }
-        }
-
-        .blog-other-title {
-            height: 45px;
-            line-height: 45px;
-            padding-left: 47px;
-            font-size: 18px;
-        }
-    }
-
-
-
-    .blog-other-list {
-        li {
-            border-top: 1px solid #fff;
-            transition: border-color 0.4s ease-in-out 0s;
-            border-left: 2px solid #FFF;
-
-            &:first-child {
-                border-top: 1px solid #e0e0e0;
-            }
-
-            &:hover {
-                transition: border-color 0.4s ease-in-out 0s;
-                border-left-color: #3ea7cb;
-
-                a {
-                    background-color: #fdfdfd;
-                }
-
-                img {
-                    transform: rotate(360deg) scale(1.2);
-                    transition: all 0.4s ease-in-out 0s;
-                }
-            }
-
-            img {
-                transition: all 0.4s ease-in-out 0s;
-            }
-
-            a {
-                display: block;
-                padding-left: 17px;
-                line-height: 38px;
-                background-color: #FFF;
-            }
-        }
-    }
-
-    .blog-other-icon {
-        width: 20px;
-        height: 20px;
-        display: inline-block;
-        vertical-align: middle;
-        margin-right: 10px;
-    }
-    /*project*/
-    .blog-project-list {
-    }
-
-    .project-item {
-        overflow: hidden;
-        position: relative;
-    }
-
-    .project-item, .blog-tag {
-        display: block;
-        padding: 10px 1px;
-        background-color: #FFF;
-        border-top: 1px solid #e0e0e0;
-    }
-
-
-    .project-content {
-        display: table;
-        width: 100%;
-        table-layout: fixed;
-    }
-
-    .project-info, .project-logo {
-        display: table-cell;
-        vertical-align: middle;
-    }
-
-    .project-logo {
-        width: 128px;
-    }
-
-    .project-img, .project-img img {
-        width: 64px;
-        height: 64px;
-        display: block;
-        margin: 0 auto;
-    }
-
-    .project-name {
-        color: #4183c4;
-        font-size: 22px;
-        line-height: 45px;
-        display: block;
-    }
-
-    .project-text {
-        color: #aaa;
-    }
-
-    .project-info {
-        dt, dd {
-            text-align: center;
-        }
-    }
-
-    .project-other {
-        overflow: hidden;
-        padding: 15px 0 5px;
-    }
-
-    .project-support {
-        float: left;
-        padding: 10px 0;
-        text-align: center;
-
-        &.terminal {
-            width: 128px;
-        }
-
-        &.support {
-            width: 210px;
-        }
-    }
-
-    .support-item {
-        background: url(/Content/Images/said-public.png) no-repeat -50px -142px;
-        cursor: help;
-        padding: 12px 19px;
-
-        &.wp {
-            background-position: -4px -142px;
-        }
-
-        &.mobile {
-            background-position: -94px -142px;
-        }
-
-        &.firefox {
-            background-position: -5px -102px;
-        }
-
-        &.chrome {
-            background-position: -50px -102px;
-        }
-
-        &.ie {
-            background-position: -139px -102px;
-        }
-
-        &.safari {
-            background-position: -94px -102px;
-        }
-
-        &.opera {
-            background-position: -185px -102px;
-        }
-    }
-    /*tag*/
-    .blog-tag-item {
-        display: inline-block;
-        background-color: #ededed;
-        border-radius: 3px;
-        padding: 2px 8px;
-        margin: 0 5px 5px 0;
-
-        &:hover {
-            background-color: #75b4f4;
-            color: #FAFAFA !important;
-        }
-    }
-    /*@media (min-width:992px) {
-    .said-blog-list, .said-blog-notfound { padding-right: 300px; }
-    .blog-other-content { width: 270px; }
-}*/
-    /*
-    #b4c88b
-    #0099CC
-    #336699
-    #339933
-    #33CC99
-    #666699
-    #009999
-    #666699
-    #FF6666
-    #6699CC
-    #006699
-    #66CC99
-    */
 }
