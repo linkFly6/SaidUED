@@ -153,7 +153,8 @@
         color: #c03980; }
     .said-blog-content .b-item .b-summary {
       color: #777;
-      padding: 9px 0 5px; }
+      padding: 9px 0 5px;
+      text-align: justify; }
     .said-blog-content .b-item .b-more {
       text-align: center;
       color: #777;

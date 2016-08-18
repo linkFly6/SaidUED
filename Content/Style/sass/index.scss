@@ -212,6 +212,16 @@
 }
 
 
+/*blog*/
+.module-more-link {
+    font-family: "Helvetica Neue","Helvetica","Arial","Verdana","sans-serif";
+    font-size: 15px;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
 .module-content {
 
     .module-mask {
@@ -260,15 +270,7 @@
     a.module-item-title:hover {
         color: #08c;
     }
-    /*blog*/
-    .module-more-link {
-        font-family: "PingHei","Helvetica Neue","Helvetica","Arial","Verdana","sans-serif";
-        font-size: 15px;
 
-        &:hover {
-            text-decoration: underline;
-        }
-    }
 
     .said-item, .blog-item {
         width: 33.3333%;
@@ -288,9 +290,75 @@
             text-align: center;
         }
     }
+
+    &.blog-content {
+        padding-top: 20px;
+    }
     //blog列表样式
     .blog-item {
+        padding-top: 15px;
+        padding-bottom: 10px;
 
+        &:nth-child(2) {
+            border-left: 1px solid #f3f3f3;
+            border-right: 1px solid #f3f3f3;
+        }
+
+        .b-title {
+            color: #333;
+            font-size: 20px;
+
+            &:visited {
+                color: #c03980;
+            }
+
+            &:hover {
+                color: #057dbb;
+                text-decoration: underline;
+            }
+        }
+
+        .b-summary {
+            color: #777;
+            padding: 9px 0 5px;
+            text-align: justify;
+        }
+
+        .b-footer {
+            padding-bottom: 3px;
+            color: #999;
+
+            %blogMoreFont {
+                font: 14px/24px "Helvetica Neue",Helvetica,Arial,'Microsoft Yahei',sans-serif;
+            }
+            //blog下面的分类
+            .b-info {
+                vertical-align: middle;
+                color: #999;
+                font-size: 13px;
+                padding-left: 5px;
+                transition: color 0.2s ease-in-out 0s;
+
+                &:hover {
+                    text-decoration: underline;
+                    color: #028cd3;
+                }
+
+                .b-cate {
+                    @extend %blogMoreFont;
+                }
+            }
+            //pv量
+            .b-pv {
+                vertical-align: middle;
+                padding-left: 5px;
+                cursor: default;
+
+                .pv-txt {
+                    @extend %blogMoreFont;
+                }
+            }
+        }
     }
 }
 
