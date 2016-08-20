@@ -625,7 +625,8 @@ body {
     overflow: hidden;
     padding: 20px; }
   .said-item h2 {
-    font-size: 1.25rem; }
+    font-size: 1.25rem;
+    padding-bottom: 4px; }
   .said-item .article-txt {
     font-size: 14px;
     line-height: 20px;
@@ -638,7 +639,6 @@ body {
     line-height: 16px;
     overflow: hidden;
     width: 100%;
-    padding: 5px 0;
         /*.like {
             @extend %displayBlock;
             float: right;
@@ -662,7 +662,10 @@ body {
       color: #999;
       padding: 0 5px; }
   .said-item .item-more {
-    text-align: right; }
+    text-align: right;
+    padding-top: 4px; }
+  .said-item .item-music {
+    padding-bottom: 4px; }
 
 .next-page {
   display: block;

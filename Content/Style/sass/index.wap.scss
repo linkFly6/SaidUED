@@ -47,6 +47,7 @@ body {
 
     h2 {
         font-size: 1.25rem;
+        padding-bottom: 4px;
     }
 
     .article-txt {
@@ -65,7 +66,7 @@ body {
         line-height: 16px;
         overflow: hidden;
         width: 100%;
-        padding: 5px 0;
+
 
 
         %displayBlock {
@@ -99,13 +100,15 @@ body {
             color: #999;
             padding: 0 5px;
         }
-
-        .fa-heart-o::before, .fa-heart::before {
-        }
     }
 
     .item-more {
         text-align: right;
+        padding-top: 4px;
+    }
+
+    .item-music {
+        padding-bottom: 4px;
     }
 }
 
