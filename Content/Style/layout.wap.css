@@ -1,4 +1,7 @@
 @charset "UTF-8";
+.globalFont, body {
+  font-family: 'lucida grande','lucida sans unicode',lucida,helvetica,'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei',sans-serif; }
+
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -15,8 +18,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   list-style: none; }
 
 body {
-  -webkit-font-smoothing: antialiased;
-  font-family: 'lucida grande','lucida sans unicode',lucida,helvetica,'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei',sans-serif; }
+  -webkit-font-smoothing: antialiased; }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: inherit;
@@ -48,6 +50,8 @@ body {
     background-image: url("/Content/Images/Said-wap-logo2.png"); }
     .logo.white .home {
       width: 48px; }
+  .logo.blackTxt {
+    background-image: url("/Content/Images/Said-wap-logo-txt-1.png"); }
   .logo .home {
     line-height: 2.35;
     text-decoration: none;
@@ -95,7 +99,7 @@ body {
       background: #fafafa;
       position: absolute;
       left: 16px;
-      transition: all ease-in-out 0.2s 0.2s; }
+      transition: all ease-in-out 0.3s 0.2s; }
     .navbar .nav-btn .ico-l-top {
       top: 23px;
       transform: translateY(-3px);
@@ -146,10 +150,32 @@ body {
       text-align: left;
       display: block;
       padding: 15px 0;
-      text-align: center; }
+      text-align: center;
+      -moz-transform: scale(1.1) translateY(-24px);
+      -ms-transform: scale(1.1) translateY(-24px);
+      -o-transform: scale(1.1) translateY(-24px);
+      -webkit-transform: scale(1.1) translateY(-24px);
+      transform: scale(1.1) translateY(-24px);
+      opacity: 0;
+      transition: opacity 0.35s ease-out, transform 0.35s ease-out; }
+      .inner-container .menu-container .menu li:nth-child(1) {
+        transition-delay: 750ms, 750ms; }
+      .inner-container .menu-container .menu li:nth-child(2) {
+        transition-delay: 800ms, 800ms; }
+      .inner-container .menu-container .menu li:nth-child(3) {
+        transition-delay: 850ms, 850ms; }
+      .inner-container .menu-container .menu li:nth-child(4) {
+        transition-delay: 900ms, 900ms; }
+      .inner-container .menu-container .menu li:nth-child(5) {
+        transition-delay: 950ms, 950ms; }
+      .inner-container .menu-container .menu li:nth-child(6) {
+        transition-delay: 1000ms, 1000ms; }
       .inner-container .menu-container .menu li a {
         color: #fafafa;
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6); }
+    .inner-container .menu-container .menu .nav-By {
+      color: #afafaf;
+      opacity: 0.5; }
 .inner-container .menu-bg {
   position: absolute;
   display: block;
@@ -158,8 +184,8 @@ body {
   top: -25%;
   height: 50%;
   background-color: white;
-  transition: all cubic-bezier(0.09, 0.5, 0.94, 0.31) 0.5s;
-  /*transition: all cubic-bezier(0,.16,.99,.15) 0.5s;//快-慢-快2*/ }
+  /*transition: all cubic-bezier(.09,.5,.94,.31) 0.5s; //快-慢-快*/
+  transition: all cubic-bezier(0, 0.19, 0.85, -0.02) 0.5s; }
   .inner-container .menu-bg.top {
     /*top: 0%;
     background-color: yellow;
@@ -194,6 +220,13 @@ body {
 .inner-container.open .menu-container {
   opacity: 1;
   transition: opacity linear .5s .5s; }
+  .inner-container.open .menu-container li {
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1; }
 
 .page-content {
   margin-top: -48px; }
@@ -228,6 +261,8 @@ body {
     -webkit-filter: brightness(0.8);
     /* Chrome all / Safari all */
     filter: brightness(0.8); }
+    .banner .banner-bg.cover {
+      background-size: cover; }
   .banner .banner-content {
     color: #fff;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
@@ -295,12 +330,16 @@ body {
   padding: 10px 0; }
   .f-link a {
     font-size: 13px;
-    color: #555; }
-  .f-link .f-home {
-    padding-right: 18px; }
-  .f-link .f-about {
-    padding-left: 18px;
-    border-left: 1px solid #dadada; }
+    color: #555;
+    padding-left: 10px; }
+  .f-link .l-line:before {
+    /*border-left: 1px solid #dadada;*/
+    background-color: #dadada;
+    display: inline-block;
+    height: 10px;
+    width: 1px;
+    content: ' ';
+    margin-right: 10px; }
 
 .line-clamp {
   display: -webkit-box;

@@ -4,6 +4,15 @@
     #{$property}: $value;
 }
 
+//全局字体
+%globalFontFamily {
+    font-family: 'lucida grande','lucida sans unicode',lucida,helvetica,'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei',sans-serif;
+}
+
+//当字体被覆盖了的时候使用的
+.globalFont {
+    @extend %globalFontFamily;
+}
 
 html {
     font-family: sans-serif;
@@ -26,7 +35,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 body {
     -webkit-font-smoothing: antialiased;
-    font-family: 'lucida grande','lucida sans unicode',lucida,helvetica,'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei',sans-serif;
+    @extend %globalFontFamily;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -67,6 +76,10 @@ body {
         .home {
             width: 48px;
         }
+    }
+
+    &.blackTxt {
+        background-image: url('/Content/Images/Said-wap-logo-txt-1.png');
     }
 
     .home {
@@ -131,7 +144,8 @@ body {
             background: #fafafa;
             position: absolute;
             left: 16px;
-            transition: all ease-in-out 0.2s 0.2s;
+            //导航的两个横杠的动画
+            transition: all ease-in-out 0.3s 0.2s;
         }
         //正常导航页的上面一条横杠
         .ico-l-top {
@@ -215,14 +229,35 @@ body {
                 display: block;
                 padding: 15px 0;
                 text-align: center;
+                -moz-transform: scale(1.1) translateY(-24px);
+                -ms-transform: scale(1.1) translateY(-24px);
+                -o-transform: scale(1.1) translateY(-24px);
+                -webkit-transform: scale(1.1) translateY(-24px);
+                transform: scale(1.1) translateY(-24px);
+                opacity: 0;
+                transition: opacity 0.35s ease-out, transform 0.35s ease-out;
+                //循环输出相应的动画延迟（假设最大菜单为6）
+                $navItemtransitionDelay: 700ms;
+
+                @for $i from 1 through 6 {
+                    &:nth-child(#{$i}) {
+                        transition-delay: $navItemtransitionDelay+$i*50,$navItemtransitionDelay+$i*50;
+                    }
+                }
 
                 a {
                     color: #fafafa;
                     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
                 }
             }
+
+            .nav-By {
+                color: #afafaf;
+                opacity: 0.5;
+            }
         }
     }
+
 
     .menu-bg {
         position: absolute;
@@ -233,8 +268,8 @@ body {
         height: 50%;
         background-color: white;
         //蒙板动画是0.5s
-        transition: all cubic-bezier(.09,.5,.94,.31) 0.5s; //快-慢-快
-        /*transition: all cubic-bezier(0,.16,.99,.15) 0.5s;//快-慢-快2*/
+        /*transition: all cubic-bezier(.09,.5,.94,.31) 0.5s; //快-慢-快*/
+        transition: all cubic-bezier(0,.19,.85,-0.02) 0.5s; //快-慢-快2
         &.top {
             //debug
             /*top: 0%;
@@ -289,6 +324,15 @@ body {
         .menu-container {
             opacity: 1;
             transition: opacity linear .5s .5s;
+
+            li {
+                -moz-transform: none;
+                -ms-transform: none;
+                -o-transform: none;
+                -webkit-transform: none;
+                transform: none;
+                opacity: 1;
+            }
         }
     }
 }
@@ -337,6 +381,10 @@ body {
         height: 300px;
         overflow: hidden;
         @include prefixer(filter,brightness(.8));
+        //根据不同的banner图片重写自己适配的图片大小
+        &.cover {
+            background-size: cover;
+        }
     }
 
     .banner-content {
@@ -436,15 +484,17 @@ body {
     a {
         font-size: 13px;
         color: #555;
+        padding-left: 10px;
     }
 
-    .f-home {
-        padding-right: 18px;
-    }
-
-    .f-about {
-        padding-left: 18px;
-        border-left: 1px solid #dadada;
+    .l-line:before {
+        /*border-left: 1px solid #dadada;*/
+        background-color: #dadada;
+        display: inline-block;
+        height: 10px;
+        width: 1px;
+        content: ' ';
+        margin-right: 10px;
     }
 }
 

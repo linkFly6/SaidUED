@@ -596,14 +596,10 @@
 body {
   background-color: #fafafa; }
 
-.banner .banner-bg {
-  background-size: cover; }
-
 .said-item {
-  background-color: #fff;
+  display: block;
   color: #666;
   margin-bottom: 6px;
-  border: 1px solid #e0e0e0;
   position: relative;
   /*border-bottom: 1px solid #fff;*/
   text-decoration: none;
@@ -666,6 +662,14 @@ body {
     padding-top: 4px; }
   .said-item .item-music {
     padding-bottom: 4px; }
+
+.said-more {
+  padding-bottom: 15px; }
+  .said-more .said-more-link {
+    padding: 10px;
+    display: block;
+    text-align: center;
+    color: #08c; }
 
 .next-page {
   display: block;

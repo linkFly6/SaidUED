@@ -9,10 +9,11 @@
     <meta name="author" content="linkFly" />
     <link href="../Content/Style/font-awesome.min.css" rel="stylesheet" />
     <link href="../Content/Style/layout.wap.css" rel="stylesheet" />
-    <link href="../Content/Style/index.wap.css" rel="stylesheet" />
+    <link href="../Content/Style/article.wap.css" rel="stylesheet" />
+    <link href="../Content/Style/highlight/github.css" rel="stylesheet" />
     <script src="../Content/JavaScript/jQuery-2.1.1.min.js"></script>
 </head>
-<body>
+<body class="wap">
     <section class="page-container">
         <header class="navbar navbar-default" id="nav-bar">
             <div class="nav-container">
@@ -47,8 +48,8 @@
                         <li>
                             <a href="javascript:;">@为你聚焦半世纪</a>
                         </li>
-                        <li>
-                            <a href="javascript:;">听说 - by linkFly</a>
+                        <li class="nav-By">
+                            <span>听说 - by linkFly</span>
                         </li>
                     </ul>
                 </nav>
@@ -56,69 +57,207 @@
         </section>
         <section id="said-page" class="page-content">
             <div class="banner">
-                <div class="banner-bg" style="background-image:url(/Content/Images/TempImage/ngfast-bg.jpg);"></div>
-                <div class="banner-content anima fadeIn">
-                    <h1>Blog</h1>
-                    <p>Write the code</p>
-                    <p>change the world</p>
+                <div class="banner-bg cover" style="background-image:url(/Content/Images/TempImage/ngfast-bg.jpg);"></div>
+                <div class="banner-content">
+                    <!--<h1 class="anima fadeIn">听&nbsp;说</h1>-->
                 </div>
             </div>
-            <section class="said-box">
-                <div class="said-list" id="said-list-box">
-                    <div class="module-title">
-                        <span>勤学</span>
+            <section class="said-box blog">
+                <article class="music-content" id="said-content">
+                    <h1 class="blog-title">萤火虫之墓</h1>
+                    <section class="blog-content codeFont"><p>首先纠正题主理解上的错误：对象<code>o</code>的constructor是<code>Sub</code>而不是<code>Super</code>。对象<code>o</code>的指向是<code>Sub</code>，然后<code>Sub</code>继承自<code>Super</code>，<code>var o = new Sub()</code>执行的是构造函数<code>Sub</code>，而<code>Sub</code>中又执行了<code>this.name = "this is sub";</code>。</p>
+
+<p>下面我们来深入分析一下题主代码的原理以及通过<code>prototype</code>继承发生的事情。别的不多说，我们来run一遍代码：</p>
+
+<p>这是题主的源代码：</p>
+
+<pre class="highlight highlight-source"><code class="javascript hljs"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Super</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">this</span>.name = <span class="hljs-string">"this is super"</span>;
+}
+
+Super.prototype = {
+    say:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.name);
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Sub</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">this</span>.name = <span class="hljs-string">"this is sub"</span>;
+}
+
+Sub.prototype = <span class="hljs-keyword">new</span> Super();
+
+<span class="hljs-keyword">var</span> o = <span class="hljs-keyword">new</span> Sub();
+o.say(); <span class="hljs-comment">//this is sub</span>
+</code></pre>
+
+<p>我们来看执行，前面的一堆声明我们先不看。</p>
+
+<p>&nbsp;</p>
+
+<p><strong>第一步，原型链继承</strong></p>
+
+<pre class="highlight highlight-source"><code class="javascript hljs">Sub.prototype=<span class="hljs-keyword">new</span> Super();
+</code></pre>
+
+<p>这里发生了几件事：
+1. 把<code>Sub.prototype</code>设置为了<code>new Supper</code>
+2. 执行<code>new Super</code>，构建对象，暂且称这个对象为<code>temp</code>
+3. <code>temp</code>的原型指向挂在<code>temp.__proto__</code>下，大体可理解为<code>temp.__proto__ = Sub.prototype</code>
+4. <strong>设置temp的属性,即这段代码：</strong>
+    <code>javascript
+    temp.name="this is super"
+</code></p>
+
+<p>当这句<code>Sub.prototype = new Super()</code>执行完了之后，<code>Sub.prototype是个什么状态呢？</code>，<code>console</code>一下我们就知道了：</p>
+
+<pre class="highlight highlight-source"><code class="javascript hljs">{
+   name : <span class="hljs-string">"this is super"</span>,
+   __proto__ : {
+        say : <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.name);
+        },
+        __proto__:...
+   }
+}
+</code></pre>
+
+<p>或者我们可以简单的理解为这样：</p>
+
+<pre class="highlight highlight-source"><code class="javascript hljs">Sub.prototype={
+   name : <span class="hljs-string">"this is super"</span>,
+   say : <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.name);
+   }
+};
+</code></pre>
+
+<p>其实这时候，<code>Sub</code>已经成功继承了<code>Super</code>，内存指向如图。</p>
+
+<p><img src="/Content/Images/TempImage/TuscanyItaly1.jpg" alt="clipboard.png" title=""></p>
+
+<p><iframe width="100%" height="300" src="//jsrun.net/4hKKp/embedded/all/light/" allowfullscreen="allowfullscreen" frameborder="0"></iframe></p>
+
+<p>&nbsp;</p>
+
+<p><strong>第二步，创建对象<code>o</code>：</strong></p>
+
+<pre class="highlight highlight-source"><code class="javascript hljs"><span class="hljs-keyword">var</span> o = <span class="hljs-keyword">new</span> Sub();
+</code></pre>
+
+<p>这里发生了几件事：
+1. 执行构造函数<code>Sub</code>
+2. 设置<code>o.__proto__=Sub.prototype</code>，这时候对象<code>o</code>大概可以理解为这样：
+    <code>javascript
+    {
+        name: 'this is super',
+        say: function () {
+            console.log(this.name);
+        }
+    }
+</code>
+3. 然后执行的，就是题主困惑的地方：<strong>构造函数<code>Sub</code>中执行了代码<code>this.name="this is sub"</code>，即设置了<code>o.name="this is sub"</code></strong>，执行完了这里，对象<code>o</code>大体已经长成这样了：
+    <code>javascript
+    {
+        name: 'this is sub',
+        say: function () {
+            console.log(this.name);
+        }
+    }
+</code></p>
+
+<p>相比到了这里，大家应该知道是怎么一回事了吧，这时候内存指向如图：</p>
+
+<p><img src="/Content/Images/said-logo.png" alt="clipboard.png" title=""></p>
+
+<p>所以最后，当执行<code>o.say();</code>的时候，输出的是<code>this is sub</code>。</p>
+
+<p>-------------- <strong>update - 应题主后来的追问：</strong></p>
+
+<p>题主后来追问内容：</p>
+
+<pre class="highlight highlight-source"><code class="javascript hljs"><span class="hljs-keyword">var</span> o = <span class="hljs-keyword">new</span> Sub(); <span class="hljs-comment">// 之前 Sub.prototype已经修改了，很疑惑构造函数是Sub。</span>
+Sub.prototype.constructor === Sub <span class="hljs-comment">//false</span>
+<span class="hljs-keyword">new</span> Sub() 执行的构造函数 不根据Sub.prototype.constructor 的指向么？
+</code></pre>
+
+<p>&nbsp;</p>
+
+<p>首先<code>constructor</code>是不安全属性，它是允许被重写的：</p>
+
+<pre class="highlight highlight-source"><code class="javascript hljs"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">this</span>.name = <span class="hljs-string">'foo'</span>;
+}
+
+Foo.prototype = {};
+
+<span class="hljs-keyword">var</span> foo = <span class="hljs-keyword">new</span> Foo;<span class="hljs-comment">//{ }</span>
+foo.constructor == Foo.prototype.constructor <span class="hljs-comment">//true</span>
+foo <span class="hljs-keyword">instanceof</span> Foo <span class="hljs-comment">//true</span>
+</code></pre>
+
+<p>更鲜明一点的例子，我们直接声明一个对象：</p>
+
+<pre class="highlight highlight-source"><code class="javascript hljs"><span class="hljs-keyword">var</span> foo = { };
+foo.constructor == <span class="hljs-built_in">Object</span>.prototype.constructor <span class="hljs-comment">//true</span>
+</code></pre>
+
+<p>源代码中，<code>prototype.constructor</code>已经被重写为<code>Object</code>，因为这几段关键代码：</p>
+
+<pre class="highlight highlight-source"><code class="javascript hljs"><span class="hljs-comment">//省略部分代码</span>
+
+Super.prototype = {
+    <span class="hljs-comment">//这时候Super.prototype.constructor就已经指向Object了</span>
+    say: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.name);
+    }
+}
+
+<span class="hljs-comment">//省略部分代码</span>
+
+<span class="hljs-comment">//这时候Sub.prototype.constructor也已经指向了Object</span>
+Sub.prototype = <span class="hljs-keyword">new</span> Super();
+</code></pre>
+
+<p>所以在题主的源代码上，这两段代码可以印证一切：</p>
+
+<pre class="highlight highlight-source"><code class="javascript hljs">Super.prototype.constructor === <span class="hljs-built_in">Object</span> <span class="hljs-comment">//true</span>
+Sub.prototype.constructor === <span class="hljs-built_in">Object</span> <span class="hljs-comment">//true</span>
+</code></pre>
+
+<p>因为<code>constructor</code>是不安全属性，它是允许被重写的，所以题主追问的判定代码并不正确。</p>
+
+<p>另外<code>constructor</code>在对象的实现上是在构造函数里传递指向的，具体的实现可以参阅《<a href="http://www.ecma-international.org/ecma-262/7.0/index.html#sec-createdynamicfunction">ECMA-262标准实现规范 —— createdynamicfunction()</a>》。</p>
+
+<p>也即是说，是先运行构造函数，后指向<code>constructor</code>的（在构造函数里指向<code>constructor</code>）。</p>
+
+<hr>
+
+<ul>
+<li>本答案原创于 <a href="http://tasaid.com/">@linkFly</a> ，和segmentfault.com共享，转载需保留本声明。</li>
+<li>前端开发QQ群：377786580</li>
+</ul></section>
+                </article>
+                <section class="blog-more-info">
+                    <div class="blog-more-head">
+                        <div class="displaybox">
+                            <div class="info-date"><time>2016/05/12 01:08</time></div>
+                            <div class="info-like">
+                                <a href="javascript:;" class="info-cate">ECMAScript</a>
+                                <a href="javascript:;" class="likeIt" data-like="true" title="我喜欢" id="said-like">
+                                    <!--fa-heart--><i class="fa fa-heart "></i><span class="like-sum" id="likeCount">2</span>
+                                </a>
+                            </div>
+                        </div>
+                        <ul class="blog-info">
+                            <li><a href="/" class="blog-info-more">查看更多我的文章</a></li>
+                            <li><a class="licenses licenses-cc" href="/Home/Cl?url=http%3A%2F%2Fcreativecommons.org%2Flicenses%2Fby%2F3.0%2Fcn%2F&amp;sgs=m-s-licenses1">CC BY 3.0 CN</a></li>
+                            <li><a class="licenses-link" href="/Home/Cl?url=http%3A%2F%2Fcreativecommons.org%2Flicenses%2Fby%2F3.0%2Fcn%2F&amp;sgs=m-s-licenses2">本文采用创作共用署名3.0中国大陆版许可证（Creative Commons Attribution 3.0 China Mainland License）授权</a></li>
+                        </ul>
                     </div>
-                    <a class="said-item" href="/said/20160625033233.html">
-                        <div class="item-context">
-                            <div class="item-article">
-                                <h2>JavaScript - 如果...没有方法</h2>
-                                <div class="article-txt line-clamp line2">
-                                    想要做坐火车去一个更远的远方去流浪
-                                    然而目的地并不重要
-                                    我只是想重温那种稍纵即逝
-                                    从繁华到荒蛮的感觉
-                                    重新感觉一段相比人生简短了无数倍
-                                    却折射人生缩影的旅途
-                                    也只有在拥挤而千篇一律的车厢内
-                                    才格外珍惜窗外的每一寸风景
-                                </div>
-                                <div class="item-more">
-                                    <span class="cate">HTML</span>
-                                    <span class="fa fa-eye like" title="like"><i>4</i></span>
-                                    <time class="time">2016-06-25</time>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="said-item" href="/said/20160625033233.html">
-                        <div class="item-context">
-                            <div class="item-article">
-                                <h2>JavaScript下的setTimeout(fn,0)意味着什么？</h2>
-                                <div class="article-txt line-clamp line2">
-                                    想要做坐火车去一个更远的远方去流浪
-                                    然而目的地并不重要
-                                    我只是想重温那种稍纵即逝
-                                    从繁华到荒蛮的感觉
-                                    重新感觉一段相比人生简短了无数倍
-                                    却折射人生缩影的旅途
-                                    也只有在拥挤而千篇一律的车厢内
-                                    才格外珍惜窗外的每一寸风景
-                                </div>
-                                <div class="item-more">
-                                    <span class="cate">ECMAScript</span>
-                                    <span class="fa fa-eye like" title="like"><i>4</i></span>
-                                    <time class="time">2016-06-25</time>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="said-next">
-                    <a id="said-nextPage" class="next-page" href="javascript:;"><span>点击加载更多</span><i class="fa fa-caret-down"></i></a>
-                    <span id="said-loading" class="next-page" style="display:none;">加载中<i class="fa fa-circle-o-notch fa-spin"></i></span>
-                </div>
-
-
+                    <section class="music-song"></section>
+                    <audio id="said-player" height="0" width="0" loop=""></audio><!--autoplay="autoplay"-->
+                </section>
             </section>
 
 
@@ -127,10 +266,12 @@
     <footer class="footer">
         <div class="f-link">
             <a href="/" class="f-home">首页</a>
-            <a href="/about" class="f-about">关于</a>
+            <a href="javascript:;" class="f-about l-line">听说</a>
+            <a href="javascript:;" class="f-about l-line">Blog</a>
+            <a href="javascript:;" class="f-about l-line">关于</a>
         </div>
         <div class="logo-box">
-            <div class="logo">
+            <div class="logo blackTxt">
                 <a href="/" class="home">听说</a>
             </div>
         </div>
@@ -165,7 +306,7 @@
                         $navMask.addClass('open');
                     });
                 }
-            })
+            });
         })
 
         var Resource = {
