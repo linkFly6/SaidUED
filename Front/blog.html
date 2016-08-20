@@ -96,13 +96,16 @@
 
                                     <p>
                                         这段代码的运行逻辑是这样的：
-                                        <img src="http://images.cnblogs.com/cnblogs_com/silin6/596820/o_promiseError.png" alt="Callback Demo" title="">
+                                        
+                                    </p>
+                                    <p>
+                                        <img src="/Content/Images/TempImage/TuscanyItaly1.jpg" alt="Callback Demo" title="">
                                     </p>
 
                                     <p>我们的总是遇见这样的情况：一段代码异步执行，后续的代码却需要等待异步代码的，如果在异步代码之前执行，就会如上面的console.log(name)一样，输出undefined，这并不是我们想要的效果。</p>
 
                                     <p>类似的情况总是发生在我们经常要使用的ajax上：</p>
-
+                                    <iframe width="100%" height="300" src="//jsrun.net/4hKKp/embedded/all/light/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 <pre class="highlight-source"><code class="javascript hljs">    $.ajax({
         url: <span class="hljs-string">'http://www.cnblogs.com/silin6/map'</span>,
         success: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">key</span>) </span>{
@@ -185,13 +188,13 @@
 
                                     <p>上面的代码，从<em>代码语义</em>上达到了下面的流程：</p>
 
-                                    <p><img src="http://images.cnblogs.com/cnblogs_com/silin6/596820/o_Promise.png" alt="Promise" title=""></p>
+                                    <p><img src="/Content/Images/said-logo.png" alt="Promise" title=""></p>
 
                                     <p>
                                         我们仅观察代码就知道现在的它变得非常优雅，两次异步的代码被完美的抹平。但我们应该时刻谨记，Promise改变的是你异步的代码和编程思想，而并没有改变异步代码的执行——它是一种由卓越的编程思想所衍生的对象。
                                         下面一张图演示了普通异步回调和Promise异步的区别，Promise实现的异步从代码运行上来说并无太大区别，但从编程思想上来说差异巨大。
-                                        <img src="http://images.cnblogs.com/cnblogs_com/silin6/596820/o_PromiseAndCallback.png" alt="Promise" title="">
                                     </p>
+
 
                                     <h2 id="ecmascript6promise">ECMAScript 6 Promise</h2>
 
