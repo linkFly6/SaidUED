@@ -37,8 +37,11 @@ body {
     background-color: #eee;
     opacity: 1; }
 
+.said-banner-bar {
+  padding-top: 210px; }
+
 #content {
-  padding: 650px 0 0 0;
+  padding: 30px 0 0 0;
   margin-bottom: 0;
   overflow: hidden; }
 
@@ -119,7 +122,7 @@ body {
   .content-bg .content-bg-img {
     width: 100%;
     height: 680px;
-    background: url(/Content/Images/TempImage/ngfast-bg.jpg) no-repeat;
+    background: #fafafa no-repeat;
     position: relative;
     left: 0;
     transition: left 10s linear 0s;
@@ -164,7 +167,6 @@ body {
     /*margin: 0 auto;*/ }
   .blog-content code {
     font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
-    padding: 0 0.5em;
     padding-top: 0.2em;
     padding-bottom: 0.2em;
     margin: 0;

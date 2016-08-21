@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>&nbsp;听说 - 你听，你静静听</title>
+    <link href="../Content/Style/Global.css" rel="stylesheet" />
+    <meta name="keywords" content="linkFly,Said,听说,blog" />
+    <meta name="author" content="linkFly" />
+    <link href="../Content/Style/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/Style/highlight/github.css" rel="stylesheet" />
+    <link href="said-editor.css" rel="stylesheet" />
+    <script src="../Content/JavaScript/jQuery-2.1.1.min.js"></script>
+    <!--<link href="../Content/Style/highlight/default.css" rel="stylesheet" />-->
+    <!--<link href="../Content/Style/highlight/vs.css" rel="stylesheet" />-->
+    <style>
+        .content { border: 1px solid red; height: 400px; width: 960px; margin: 0 auto; padding: 50px; }
+    </style>
+</head>
+<body>
+    <section class="content">
+        <div class="editor editMode" id="questionText">
+            <div class="editor-toolbar" id="wmd-button-bar">
+                <ul class="editor-mode">
+                    <li class="pull-right">
+                        <a class="editor__menu--preview" title="预览模式"></a>
+                    </li>
+                    <li class="pull-right">
+                        <a class="editor__menu--live" title="实况模式"></a>
+                    </li>
+                    <li class="pull-right">
+                        <a class="editor__menu--edit muted" title="编辑模式"></a>
+                    </li>
+                    <li class="pull-right editor__menu--divider"></li>
+                    <li id="wmd-zen-button" class="pull-right" title="全屏">
+                        <a class="editor__menu--zen"></a>
+                    </li>
+                </ul>
+                <ul id="wmd-button-row" class="editor__menu clearfix" style="position: static; width: auto; border-bottom: none; top: 0px; z-index: 1000;">
+                    <li class="wmd-button" id="wmd-bold-button" title="加粗 <strong> Ctrl+B" style="left: 0px;">
+                        <a class="editor__menu--bold" style="background-position: 0px 0px;"></a>
+                    </li>
+                    <li class="wmd-button" id="wmd-italic-button" title="斜体 <em> Ctrl+I" style="left: 25px;">
+                        <a class="editor__menu--bold" style="background-position: -20px 0px;"></a>
+                    </li>
+                    <li class="editor__menu--divider wmd-spacer1" id="wmd-spacer1"></li>
+                    <li class="wmd-button" id="wmd-link-button" title="链接 <a> Ctrl+L" style="left: 75px;">
+                        <a class="editor__menu--bold" style="background-position: -40px 0px;"></a>
+                    </li>
+                    <li class="wmd-button" id="wmd-quote-button" title="引用 <blockquote> Ctrl+Q" style="left: 100px;">
+                        <a class="editor__menu--bold" style="background-position: -60px 0px;"></a>
+                    </li>
+                    <li class="wmd-button" id="wmd-code-button" title="代码 <pre><code> Ctrl+K" style="left: 125px;">
+                        <a class="editor__menu--bold" style="background-position: -80px 0px;"></a>
+                    </li>
+                    <li class="wmd-button" id="wmd-image-button" title="图片 <img> Ctrl+G" style="left: 150px;">
+                        <a class="editor__menu--bold" style="background-position: -100px 0px;"></a>
+                    </li>
+                    <li class="editor__menu--divider wmd-spacer2" id="wmd-spacer2"></li>
+                    <li class="wmd-button" id="wmd-olist-button" title="数字列表 <ol> Ctrl+O" style="left: 200px;">
+                        <a class="editor__menu--bold" style="background-position: -120px 0px;"></a>
+                    </li>
+                    <li class="wmd-button" id="wmd-ulist-button" title="普通列表 <ul> Ctrl+U" style="left: 225px;">
+                        <a class="editor__menu--bold" style="background-position: -140px 0px;"></a>
+                    </li>
+                    <li class="wmd-button" id="wmd-heading-button" title="标题 <h1>/<h2> Ctrl+H" style="left: 250px;">
+                        <a class="editor__menu--bold" style="background-position: -160px 0px;"></a>
+                    </li>
+                    <li class="wmd-button" id="wmd-hr-button" title="分割线 <hr> Ctrl+R" style="left: 275px;">
+                        <a class="editor__menu--bold" style="background-position: -180px 0px;"></a>
+                    </li>
+                    <li class="editor__menu--divider wmd-spacer3" id="wmd-spacer3"></li>
+                    <li class="wmd-button" id="wmd-undo-button" title="撤销 - Ctrl+Z" style="left: 325px;">
+                        <a class="editor__menu--bold" style="background-position: -200px 0px;"></a>
+                    </li>
+                    <li class="wmd-button" id="wmd-redo-button" title="重做 - Ctrl+Y" style="left: 350px;">
+                        <a class="editor__menu--bold" style="background-position: -220px -20px;"></a>
+                    </li>
+                    <li class="editor__menu--divider wmd-spacer4" id="wmd-spacer4"></li>
+                    <li class="wmd-button" id="wmd-help-button" title="Markdown 语法" style="left: 400px;">
+                        <a class="editor__menu--bold" style="background-position: -300px 0px;"></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="wmd">
+                <textarea id="answerEditor" name="text" class="form-control mono wmd-input tabIndent" rows="4" placeholder="撰写答案..." style="opacity: 1; height: 175px; background-position: right top; background-repeat: no-repeat;"></textarea>
+                <div style="position: absolute;z-index: 100;top: 31px;right: 0;" class="alert alert-info code-detect hide" role="alert">
+                    <span class="showVideo" style="cursor: pointer;">使用代码格式化改进排版</span><span class="disable" style="margin-left: 10px; cursor: pointer;">✕</span>
+                </div>
+            </div>
+            <div class="editor-line"></div>
+            <div class="editor-preview">
+                <div class="fmt" id="wmd-preview"></div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
