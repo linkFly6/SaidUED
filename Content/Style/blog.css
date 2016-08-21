@@ -38,7 +38,7 @@ body {
     opacity: 1; }
 
 #content {
-  padding: 500px 0 0 0;
+  padding: 650px 0 0 0;
   margin-bottom: 0;
   overflow: hidden; }
 
@@ -113,7 +113,7 @@ body {
   position: absolute;
   top: 78px;
   left: 0;
-  height: 460px;
+  height: 600px;
   width: 100%;
   overflow: hidden; }
   .content-bg .content-bg-img {
@@ -145,6 +145,14 @@ body {
     font-size: 85%;
     background-color: #f7f7f7;
     border-radius: 3px; }
+    .blog-content .highlight-source::-webkit-scrollbar {
+      height: 10px; }
+    .blog-content .highlight-source::-webkit-scrollbar-thumb:horizontal {
+      background-color: #CCCCCC;
+      border-radius: 6px;
+      opacity: .1; }
+    .blog-content .highlight-source::-webkit-scrollbar-thumb:horizontal:hover {
+      opacity: .1; }
     .blog-content .highlight-source code {
       line-height: 1.6;
       font-size: 16px;

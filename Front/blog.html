@@ -72,15 +72,20 @@
 
                                     <p>JavaScript充斥着Callback，例如下面的代码：</p>
 
-<pre class="highlight-source"><code class="javascript hljs">(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">num</span>) </span>{<span class="hljs-comment">//从外面接收一个参数</span>
-                                    <span class="hljs-keyword">var</span> writeName = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">callback</span>) </span>{
-                                    <span class="hljs-keyword">if</span> (num === <span class="hljs-number">1</span>)
-            callback();
+                                    <pre class="highlight highlight-source"><code class"javascript="" hljs"=""><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Super</span>(<span class="hljs-params"></span>)</span>{
+                                    <span class="hljs-keyword">this</span>.name = <span class="hljs-string">"this is super"</span>;<span class="hljs-comment">//这时候Super.prototype.constructor就已经指向Object了//这时候Super.prototype.constructor就已经指向Object了//这时候Super.prototype.constructor就已经指向Object了//这时候Super.prototype.constructor就已经指向Object了//这时候Super.prototype.constructor就已经指向Object了</span>
+}
+Super.prototype = {
+    say:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+                                    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.name);
     }
-    writeName(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<span class="hljs-comment">//callback</span>
-                                    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"i'm linkFly"</span>);
-    });
-})(<span class="hljs-number">1</span>);
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Sub</span>(<span class="hljs-params"></span>)</span>{
+                                    <span class="hljs-keyword">this</span>.name = <span class="hljs-string">"this is sub"</span>;
+}
+Sub.prototype = <span class="hljs-keyword">new</span> Super();
+<span class="hljs-keyword">var</span> o = <span class="hljs-keyword">new</span> Sub();
+o.say(); <span class="hljs-comment">//this is sub</span>
 </code></pre>
 
                                     <p>把一个函数通过参数传递，那么这个函数叫做Callback（回调函数）。</p>
