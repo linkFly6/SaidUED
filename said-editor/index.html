@@ -18,9 +18,9 @@
 </head>
 <body>
     <section class="content">
-        <div class="editor editMode" id="questionText">
-            <div class="editor-toolbar" id="wmd-button-bar">
-                <ul class="editor-mode">
+        <div class="editor editMode" id="said-editor">
+            <div class="editor-toolbar">
+                <!--<ul class="editor-mode">
                     <li class="pull-right">
                         <a class="editor__menu--preview" title="预览模式"></a>
                     </li>
@@ -34,58 +34,89 @@
                     <li id="wmd-zen-button" class="pull-right" title="全屏">
                         <a class="editor__menu--zen"></a>
                     </li>
-                </ul>
-                <ul id="wmd-button-row" class="editor__menu clearfix" style="position: static; width: auto; border-bottom: none; top: 0px; z-index: 1000;">
-                    <li class="wmd-button" id="wmd-bold-button" title="加粗 <strong> Ctrl+B" style="left: 0px;">
-                        <a class="editor__menu--bold" style="background-position: 0px 0px;"></a>
+                </ul>-->
+                <ul class="e-menu">
+                    <li class="menu-item active" id="edit-bold-button" title="加粗 <strong> Ctrl+B">
+                        <a class="menu-btn" href="javascript:;">
+                            <i class="fa fa-bold" aria-hidden="true"></i>
+                        </a>
                     </li>
-                    <li class="wmd-button" id="wmd-italic-button" title="斜体 <em> Ctrl+I" style="left: 25px;">
-                        <a class="editor__menu--bold" style="background-position: -20px 0px;"></a>
+                    <li class="menu-item" id="edit-italic-button" title="斜体 <em> Ctrl+I">
+                        <a class="menu-btn" href="javascript:;">
+                            <i class="fa fa-italic" aria-hidden="true"></i>
+                        </a>
                     </li>
-                    <li class="editor__menu--divider wmd-spacer1" id="wmd-spacer1"></li>
-                    <li class="wmd-button" id="wmd-link-button" title="链接 <a> Ctrl+L" style="left: 75px;">
-                        <a class="editor__menu--bold" style="background-position: -40px 0px;"></a>
+                    <li class="line"></li>
+                    <li class="menu-item" id="edit-link-button" title="链接 <a> Ctrl+L">
+                        <a class="menu-btn" href="javascript:;">
+                            <i class="fa fa-link" aria-hidden="true"></i>
+                        </a>
                     </li>
-                    <li class="wmd-button" id="wmd-quote-button" title="引用 <blockquote> Ctrl+Q" style="left: 100px;">
-                        <a class="editor__menu--bold" style="background-position: -60px 0px;"></a>
+                    <li class="menu-item" id="edit-quote-button" title="引用 <blockquote> Ctrl+Q">
+                        <a class="menu-btn" href="javascript:;">
+                            <i class="fa fa-indent" aria-hidden="true"></i>
+                        </a>
                     </li>
-                    <li class="wmd-button" id="wmd-code-button" title="代码 <pre><code> Ctrl+K" style="left: 125px;">
-                        <a class="editor__menu--bold" style="background-position: -80px 0px;"></a>
+                    <li class="menu-item" id="edit-code-button" title="代码 <pre><code> Ctrl+K">
+                        <a class="menu-btn" href="javascript:;">
+                            <i class="fa fa-code" aria-hidden="true"></i>
+                        </a>
                     </li>
-                    <li class="wmd-button" id="wmd-image-button" title="图片 <img> Ctrl+G" style="left: 150px;">
-                        <a class="editor__menu--bold" style="background-position: -100px 0px;"></a>
+                    <li class="menu-item" id="edit-image-button" title="图片 <img> Ctrl+G">
+                        <a class="menu-btn" href="javascript:;">
+                            <i class="fa fa-picture-o" aria-hidden="true"></i>
+                        </a>
                     </li>
-                    <li class="editor__menu--divider wmd-spacer2" id="wmd-spacer2"></li>
-                    <li class="wmd-button" id="wmd-olist-button" title="数字列表 <ol> Ctrl+O" style="left: 200px;">
-                        <a class="editor__menu--bold" style="background-position: -120px 0px;"></a>
+                    <li class="line"></li>
+                    <li class="menu-item" id="edit-olist-button" title="数字列表 <ol> Ctrl+O">
+                        <a class="menu-btn" href="javascript:;">
+                            <i class="fa fa-list-ol" aria-hidden="true"></i>
+                        </a>
                     </li>
-                    <li class="wmd-button" id="wmd-ulist-button" title="普通列表 <ul> Ctrl+U" style="left: 225px;">
-                        <a class="editor__menu--bold" style="background-position: -140px 0px;"></a>
+                    <li class="menu-item" id="edit-ulist-button" title="普通列表 <ul> Ctrl+U">
+                        <a class="menu-btn" href="javascript:;">
+                            <i class="fa fa-list-ul" aria-hidden="true"></i>
+                        </a>
                     </li>
-                    <li class="wmd-button" id="wmd-heading-button" title="标题 <h1>/<h2> Ctrl+H" style="left: 250px;">
-                        <a class="editor__menu--bold" style="background-position: -160px 0px;"></a>
+                    <li class="line"></li>
+                    <li class="menu-item" id="edit-heading-button" title="标题 <h1>/<h2> Ctrl+H">
+                        <a class="menu-btn" href="javascript:;">
+                            <i class="fa fa-header" aria-hidden="true"></i>
+                        </a>
                     </li>
-                    <li class="wmd-button" id="wmd-hr-button" title="分割线 <hr> Ctrl+R" style="left: 275px;">
-                        <a class="editor__menu--bold" style="background-position: -180px 0px;"></a>
+                    <li class="menu-item" id="edit-hr-button" title="分割线 <hr> Ctrl+R">
+                        <a class="menu-btn" href="javascript:;">
+                            <i class="fa fa-scissors" aria-hidden="true"></i>
+                        </a>
                     </li>
-                    <li class="editor__menu--divider wmd-spacer3" id="wmd-spacer3"></li>
-                    <li class="wmd-button" id="wmd-undo-button" title="撤销 - Ctrl+Z" style="left: 325px;">
-                        <a class="editor__menu--bold" style="background-position: -200px 0px;"></a>
+                    <li class="menu-item" id="edit-table-button" title="表格 <hr> Ctrl+T">
+                        <a class="menu-btn" href="javascript:;">
+                            <i class="fa fa-table" aria-hidden="true"></i>
+                        </a>
                     </li>
-                    <li class="wmd-button" id="wmd-redo-button" title="重做 - Ctrl+Y" style="left: 350px;">
-                        <a class="editor__menu--bold" style="background-position: -220px -20px;"></a>
+                    <li class="line"></li>
+                    <li class="menu-item" id="edit-undo-button" title="撤销 - Ctrl+Z">
+                        <a class="menu-btn" href="javascript:;">
+                            <i class="fa fa-undo" aria-hidden="true"></i>
+                        </a>
                     </li>
-                    <li class="editor__menu--divider wmd-spacer4" id="wmd-spacer4"></li>
-                    <li class="wmd-button" id="wmd-help-button" title="Markdown 语法" style="left: 400px;">
-                        <a class="editor__menu--bold" style="background-position: -300px 0px;"></a>
+                    <li class="menu-item" id="edit-redo-button" title="重做 - Ctrl+Y">
+                        <a class="menu-btn" href="javascript:;">
+                            <i class="fa fa-repeat" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li class="menu-item" id="edit-help-button" title="Markdown 语法">
+                        <a class="menu-btn" href="javascript:;">
+
+                        </a>
                     </li>
                 </ul>
             </div>
-            <div class="wmd">
-                <textarea id="answerEditor" name="text" class="form-control mono wmd-input tabIndent" rows="4" placeholder="撰写答案..." style="opacity: 1; height: 175px; background-position: right top; background-repeat: no-repeat;"></textarea>
-                <div style="position: absolute;z-index: 100;top: 31px;right: 0;" class="alert alert-info code-detect hide" role="alert">
-                    <span class="showVideo" style="cursor: pointer;">使用代码格式化改进排版</span><span class="disable" style="margin-left: 10px; cursor: pointer;">✕</span>
-                </div>
+            <div class="editor-main">
+                <textarea name="text" class="form-control mono wmd-input tabIndent eidtor-text" rows="4" placeholder="撰写内容..." style="opacity: 1; height: 175px; background-position: right top; background-repeat: no-repeat;">这是测试，
+呵呵呵，
+哈哈
+                </textarea>
             </div>
             <div class="editor-line"></div>
             <div class="editor-preview">
@@ -93,5 +124,10 @@
             </div>
         </div>
     </section>
+    <script src="said-editor.js"></script>
+    <script>
+        var editor = document.getElementById('said-editor');
+        saidEditor(editor);
+    </script>
 </body>
 </html>
