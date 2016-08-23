@@ -28,20 +28,7 @@
     }
 })(typeof window !== 'undefined' ? window : this, function (window, noGlobal, undefined) {
     'use strict';
-    var eventNames = 'bold,italic,link,quote,code,image,olist,ulist,heading,hr,table,undo,redo,help'.split(','),
-        EditorEvents = {
-            'bold': {
-                reg: /\*{2}[^\*]*\*{2}|_{2}[^\*]*_{2}/g,
-                click: function (e, obj) {//obj指向这个bold对象
-                    var pos = Editor.pos(this.textArea);
-                    if (pos[0] == pos[1]) {
-                        this.insertValue(pos[0], pos[1], '****');//插入
-                        this.select(pos[0] + 2, pos[0] + 2)
-                    }
-
-                }
-            }
-        };
+    var eventNames = 'bold,italic,link,quote,code,image,olist,ulist,heading,hr,table,undo,redo,help'.split(',')
 
     var Editor = function (elem, options) {
         if (!(this instanceof Editor))
@@ -52,12 +39,69 @@
         initEditor(this);
     };
 
+    //插件列表
+    Editor.plugs = {
+        'bold': {
+            //绘制HTML
+            render: function () {
+
+            },
+            reg: /\*{2}[^\*]*\*{2}|_{2}[^\*]*_{2}/g,
+            click: function (e, obj) {//obj指向这个bold对象
+                var pos = Editor.pos(this.textArea);
+                if (pos[0] == pos[1]) {//插入
+                    this.insertValue(pos[0], pos[1], '**加粗文本**')
+                        .select(pos[0] + 2, pos[0] + 6)
+                } else {
+                    //有选择文本
+                    this.wrapSelect(pos[0], pos[1], '**', '**');
+                }
+            }
+        },
+        'undo': {
+            click: function () {
+                document.execCommand("undo");
+            }
+        },
+        'redo': {
+            click: function () {
+                document.execCommand("redo");
+            }
+        }
+    };
+
     //插入一个数值
     Editor.prototype.insertValue = function (start, end, value) {
         var textArea = this.textArea.value,
             startText = textArea.substring(0, end),
             endText = textArea.substring(end);
         this.textArea.value = startText + value + endText;
+        //这里也需要检测两边特殊语法
+
+        return this;
+    };
+
+    //包装选中的文本
+    Editor.prototype.wrapSelect = function (start, end, strLeft, strRight) {
+        var textArea = this.textArea.value,
+            strLeftLength = strLeft.length,
+            strRightLength = strRight.length,
+            startText = textArea.substring(0, start),
+            endText = textArea.substring(end),
+            wrapText = textArea.substring(start, end);
+        //检测两边是否包含包装的关键语句，如果有的话则去掉
+        if (~startText.lastIndexOf(strLeft) && ~endText.indexOf(strRight)) {
+            //去掉关键语法
+            startText = startText.substring(0, startText.length - strLeftLength);
+            endText = endText.substr(strRightLength);
+            this.textArea.value = [startText, wrapText, endText].join('');
+            //设置select
+            this.select(start - strLeftLength, end - strRightLength);
+        } else {
+            this.textArea.value = [startText, strLeft, wrapText, strRight, endText].join('');
+            this.select(start + strLeftLength, end + strRightLength);
+        }
+        return this;
     };
 
     //选中一段文本
@@ -140,8 +184,8 @@
 
     function initEvent(editor) {
         eventNames.forEach(function (name) {
-            if (EditorEvents[name]) {
-                var button = document.getElementById(editor.getId(name)), event = EditorEvents[name];
+            if (Editor.plugs[name]) {
+                var button = document.getElementById(editor.getId(name)), event = Editor.plugs[name];
                 if (button) {
                     button.addEventListener('click', function (e) {
                         editor.textArea.focus();
