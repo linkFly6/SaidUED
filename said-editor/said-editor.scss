@@ -9,11 +9,11 @@
         position: absolute;
         top: 0;
         width: 100%;
-        z-index: 106;
+        z-index: 2;
         border-bottom: 1px solid #CCC;
         overflow: hidden;
 
-        .e-menu {
+        .e-menu, .e-tool {
             list-style: none;
             margin: 0;
             padding: 0 5px;
@@ -27,7 +27,7 @@
                 %itemActive {
                     background-color: #f6f6f6;
                     border-color: #f6f6f6;
-                    color: #009a61;
+                    color: #1ea4b4;
                 }
 
                 a {
@@ -37,10 +37,6 @@
                     width: 20px;
                     height: 20px;
                     line-height: 20px;
-                    /*background-repeat: no-repeat;
-                    background-size: 380px 60px;*/
-                    /*background-image: url(editorIco.png);*/
-                    /*text-indent: 110%;*/
                     white-space: nowrap;
                     overflow: hidden;
                     text-align: center;
@@ -49,7 +45,7 @@
                     -webkit-box-sizing: content-box;
                     box-sizing: content-box;
                     color: #9b9b9b;
-
+                    /*transition: color ease-in-out 0.15s, background-color ease-in-out 0.15s;*/
                     &:hover {
                         @extend %itemActive;
                     }
@@ -73,6 +69,12 @@
                     overflow: hidden;
                     text-transform: capitalize;
                 }
+            }
+        }
+
+        .e-tool {
+            li {
+                float: right;
             }
         }
     }
@@ -115,6 +117,32 @@
             -moz-tab-size: 4;
             -o-tab-size: 4;
             tab-size: 4;
+
+            &.loading {
+
+            }
+
+            
+        }
+    }
+    //加载
+    .editor-loading {
+        color: #acacac;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        background-color: #fafafa;
+        opacity: .5;
+
+        .loading-box {
+            position: absolute;
+            top: 45%;
+            text-align: center;
+            width: 100%;
         }
     }
 }

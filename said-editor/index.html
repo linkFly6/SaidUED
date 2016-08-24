@@ -18,25 +18,28 @@
 </head>
 <body>
     <section class="content">
-        <div class="editor editMode" id="said-editor">
+        <textarea name="text" id="demoTxt" rows="4" placeholder="撰写内容..." style="opacity: 1; height: 300px; width:100%;">
+            这是测试，
+            呵呵呵，
+            哈哈
+        </textarea>
+        <!--
+        <div class="editor editMode">
             <div class="editor-toolbar">
-                <!--<ul class="editor-mode">
-                    <li class="pull-right">
-                        <a class="editor__menu--preview" title="预览模式"></a>
+                <ul class="e-tool">
+                    <li class="menu-item" id="edit-help-button" title="帮助说明">
+                        <a class="menu-btn" href="javascript:;">
+                            <i class="fa fa-question-circle" aria-hidden="true"></i>
+                        </a>
                     </li>
-                    <li class="pull-right">
-                        <a class="editor__menu--live" title="实况模式"></a>
+                    <li class="menu-item" id="edit-preview-button" title="预览">
+                        <a class="menu-btn" href="javascript:;">
+                            <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                        </a>
                     </li>
-                    <li class="pull-right">
-                        <a class="editor__menu--edit muted" title="编辑模式"></a>
-                    </li>
-                    <li class="pull-right editor__menu--divider"></li>
-                    <li id="wmd-zen-button" class="pull-right" title="全屏">
-                        <a class="editor__menu--zen"></a>
-                    </li>
-                </ul>-->
+                </ul>
                 <ul class="e-menu">
-                    <li class="menu-item active" id="edit-bold-button" title="加粗 <strong> Ctrl+B">
+                    <li class="menu-item" id="edit-bold-button" title="加粗 <strong> Ctrl+B">
                         <a class="menu-btn" href="javascript:;">
                             <i class="fa fa-bold" aria-hidden="true"></i>
                         </a>
@@ -105,29 +108,29 @@
                             <i class="fa fa-repeat" aria-hidden="true"></i>
                         </a>
                     </li>
-                    <li class="menu-item" id="edit-help-button" title="Markdown 语法">
-                        <a class="menu-btn" href="javascript:;">
-
-                        </a>
-                    </li>
                 </ul>
             </div>
             <div class="editor-main">
-                <textarea name="text" class="form-control mono wmd-input tabIndent eidtor-text" rows="4" placeholder="撰写内容..." style="opacity: 1; height: 175px; background-position: right top; background-repeat: no-repeat;">这是测试，
-呵呵呵，
-哈哈
+                <textarea name="text" class="eidtor-text" rows="4" placeholder="撰写内容..." style="opacity: 1; height: 175px; background-position: right top; background-repeat: no-repeat;">
+                    这是测试，
+                    呵呵呵，
+                    哈哈
                 </textarea>
             </div>
-            <div class="editor-line"></div>
-            <div class="editor-preview">
-                <div class="fmt" id="wmd-preview"></div>
+            <div class="editor-loading">
+                <div class="loading-box">
+                    <i class="fa fa-refresh fa-spin fa-2x fa-fw margin-bottom"></i>
+                </div>
             </div>
         </div>
+        -->
     </section>
     <script src="said-editor.js"></script>
     <script>
-        var editor = document.getElementById('said-editor');
+        //setTimeout(function () {
+        var editor = document.getElementById('demoTxt');
         saidEditor(editor);
+        //}, 1000)
     </script>
 </body>
 </html>

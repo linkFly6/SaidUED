@@ -8,33 +8,29 @@
     position: absolute;
     top: 0;
     width: 100%;
-    z-index: 106;
+    z-index: 2;
     border-bottom: 1px solid #CCC;
     overflow: hidden; }
-    .editor .editor-toolbar .e-menu {
+    .editor .editor-toolbar .e-menu, .editor .editor-toolbar .e-tool {
       list-style: none;
       margin: 0;
       padding: 0 5px;
       background-color: #FFF; }
-      .editor .editor-toolbar .e-menu li {
+      .editor .editor-toolbar .e-menu li, .editor .editor-toolbar .e-tool li {
         float: left;
         margin: 0 2px;
         vertical-align: text-top; }
-        .editor .editor-toolbar .e-menu li a:hover, .editor .editor-toolbar .e-menu li.active a {
+        .editor .editor-toolbar .e-menu li a:hover, .editor .editor-toolbar .e-menu li.active a, .editor .editor-toolbar .e-tool li a:hover, .editor .editor-toolbar .e-tool li.active a {
           background-color: #f6f6f6;
           border-color: #f6f6f6;
-          color: #009a61; }
-        .editor .editor-toolbar .e-menu li a {
+          color: #1ea4b4; }
+        .editor .editor-toolbar .e-menu li a, .editor .editor-toolbar .e-tool li a {
           cursor: pointer;
           display: block;
           border: 5px solid #FFF;
           width: 20px;
           height: 20px;
           line-height: 20px;
-          /*background-repeat: no-repeat;
-          background-size: 380px 60px;*/
-          /*background-image: url(editorIco.png);*/
-          /*text-indent: 110%;*/
           white-space: nowrap;
           overflow: hidden;
           text-align: center;
@@ -42,8 +38,9 @@
           -moz-box-sizing: content-box;
           -webkit-box-sizing: content-box;
           box-sizing: content-box;
-          color: #9b9b9b; }
-        .editor .editor-toolbar .e-menu li.line {
+          color: #9b9b9b;
+          /*transition: color ease-in-out 0.15s, background-color ease-in-out 0.15s;*/ }
+        .editor .editor-toolbar .e-menu li.line, .editor .editor-toolbar .e-tool li.line {
           margin: 5px 4px;
           width: 0;
           height: 20px;
@@ -54,6 +51,8 @@
           white-space: nowrap;
           overflow: hidden;
           text-transform: capitalize; }
+    .editor .editor-toolbar .e-tool li {
+      float: right; }
   .editor .editor-main {
     position: relative;
     overflow: hidden;
@@ -91,5 +90,21 @@
       -moz-tab-size: 4;
       -o-tab-size: 4;
       tab-size: 4; }
+  .editor .editor-loading {
+    color: #acacac;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background-color: #fafafa;
+    opacity: .5; }
+    .editor .editor-loading .loading-box {
+      position: absolute;
+      top: 45%;
+      text-align: center;
+      width: 100%; }
 
 /*# sourceMappingURL=said-editor.css.map */
