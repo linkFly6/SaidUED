@@ -310,16 +310,17 @@
             selectInfo.endText = selectInfo.endText.substr(strRightLength);
             textArea.value = [selectInfo.startText, selectInfo.innerText, selectInfo.endText].join('');
             //设置select
-            Editor.select(textArea, selectInfo.start - strLeftLength, selectInfo.end - strRightLength);
+            //Editor.select(textArea, selectInfo.start - strLeftLength, selectInfo.end - strRightLength);
         } else {
 
             if (!selectInfo.innerText) {//没有选中内容，填充默认文本并选中
                 selectInfo.innerText = defaultText;
                 //修正光标选中，加上默认文本的值
-                selectInfo.end += defaultText.length;
+                //selectInfo.end += defaultText.length;
             }
             textArea.value = [selectInfo.startText, strLeft, selectInfo.innerText, strRight, selectInfo.endText].join('');
-            Editor.select(textArea, selectInfo.start + strLeftLength, selectInfo.end + strRightLength);
+            //Editor.select(textArea, selectInfo.start + strLeftLength, selectInfo.end + strRightLength);
+            return selectInfo;
         }
 
 
@@ -337,7 +338,7 @@
             type: 'left',//左侧工具栏
             title: '加粗 <strong> Ctrl+B',//hover文本
             keyCode: 13,//快捷键
-            click: function (e, obj) {//obj指向这个bold对象
+            click: function (e, obj) {//obj指向这个bold对象 TODO：这里是选中要自己搞
                 Editor.wrapSelect(this.textArea, '**', '**', '加粗文本');
             }
         },
@@ -347,7 +348,9 @@
             type: 'left',
             title: '斜体 <em> Ctrl+I',
             keyCode: 13,
-            click: function (e, obj) { }
+            click: function (e, obj) {
+                Editor.wrapSelect(this.textArea, '*', '*', '斜体文本');
+            }
         },
         //链接
         'link': {
