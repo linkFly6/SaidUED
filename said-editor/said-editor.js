@@ -69,7 +69,15 @@
     };
 
 
+    Editor.prototype.setValue = function (value) {
+        this.textArea.value = value;
+        return this;
+    }
 
+    Editor.prototype.setInfoValue = function (selectInfo) {
+        this.textArea.value = [selectInfo.startText, selectInfo.innerText, selectInfo.endText].join('');
+        return this;
+    }
 
     /**
     * 插入一个数值到textarea，会自动设置光标
@@ -196,7 +204,7 @@
             if (button) {
                 button.addEventListener('click', function (e) {
                     editor.textArea.focus();
-                    plug.click.call(editor, e, event, button);
+                    plug.click.call(editor, e, plug, button);
                 });
             }
         });
@@ -348,8 +356,30 @@
             type: 'left',
             title: '斜体 <em> Ctrl+I',
             keyCode: 13,
-            click: function (e, obj) {
-                Editor.wrapSelect(this.textArea, '*', '*', '斜体文本');
+            leftReg: /(?:\*{3,}|[^\*]\*)$/m,//匹配"文字***"，前面是3位或3位以上的（加粗+斜体）则匹配中，因为不需要使用结果，所以使用?:不匹配搜索结果
+            rightReg: /^(?:\*{3,}|\*[^\*])/m,//匹配"**文字"
+            click: function (e, obj, button) {
+                //Editor.wrapSelect(this.textArea, '*', '*', '斜体文本');
+                var selectInfo = this.getSelectInfo(),
+                    startMatchIndex = selectInfo.startText.search(obj.leftReg),
+                    endMatchIndex = selectInfo.endText.search(obj.rightReg),
+                    startMatchLength = selectInfo.startText.length - startMatchIndex,
+                    endMatchLength = endMatchIndex,
+                    isInsert = false;
+
+
+                if (isInsert) {//插入模式
+                    if (selectInfo.innerText) {
+                        selectInfo.innerText = '*' + selectInfo.innerText + '*';
+                        this.setInfoValue(selectInfo).select(selectInfo.start + 1, selectInfo.end + 1);//光标往后移一位
+                    } else {
+                        selectInfo.innerText = '*斜体文本*';
+                        this.setInfoValue(selectInfo).select(selectInfo.start + 1, selectInfo.end + 5);//选中插入的文本
+                    }
+                } else {//修剪模式
+
+                }
+
             }
         },
         //链接
