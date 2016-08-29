@@ -293,7 +293,9 @@
 .blog-notfound-Title {
   padding: 15px 0;
   text-align: center; }
-  .blog-notfound-Title span {
+  .blog-notfound-Title a, .blog-notfound-Title span {
+    display: block;
+    padding: 10px 0;
     font-size: 1.6em;
     padding-left: 10px; }
 
