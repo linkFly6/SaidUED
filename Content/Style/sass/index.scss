@@ -296,8 +296,7 @@
     }
     //blog列表样式
     .blog-item {
-        padding-top: 15px;
-        padding-bottom: 10px;
+        padding: 15px 20px 10px;
 
         &:nth-child(2) {
             border-left: 1px solid #f3f3f3;
@@ -312,7 +311,7 @@
                 color: #c03980;
             }
 
-            &:hover {
+            a:hover {
                 color: #057dbb;
                 text-decoration: underline;
             }
@@ -322,11 +321,15 @@
             color: #777;
             padding: 9px 0 5px;
             text-align: justify;
+            /*max-height: 109px;*/
+            height: 109px;
+            overflow: hidden;
         }
 
         .b-footer {
             padding-bottom: 3px;
             color: #999;
+            overflow: hidden;
 
             %blogMoreFont {
                 font: 14px/24px "Helvetica Neue",Helvetica,Arial,'Microsoft Yahei',sans-serif;
@@ -347,6 +350,10 @@
                 .b-cate {
                     @extend %blogMoreFont;
                 }
+            }
+
+            .b-date {
+                float: right;
             }
             //pv量
             .b-pv {
