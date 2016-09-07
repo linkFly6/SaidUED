@@ -59,7 +59,7 @@
                     <article class="blog-article">
                         <div class="html">
                             <section class="blog-content">
-                                <div class="html">
+                                <div id="blog-context">
                                     <!--<h1 id="javascript1ecmascript6promise">JavaScript异步编程（1）-ECMAScript 6的Promise对象</h1>-->
                                     <p>
                                         JavaScript的Callback机制深入人心。而JavaScript世界同样充斥的各种异步操作（异步IO、setTimeout等）。异步和Callback的搭载很容易就衍生"回调金字塔"。——由此产生Deferred/Promise。
@@ -663,6 +663,14 @@ o.say(); <span class="hljs-comment">//this is sub</span>
     <footer id="said-footer">
         <a href="/" title="听说" class="logo"></a>
     </footer>
+    <div id="previewImg">
+        <div class="pre-box" id="pre-box">
+            <a class="img-link" id="pre-link" href="javascript:;" target="_blank"><img id="pre-img" src="/Content/Images/TempImage/TuscanyItaly1.jpg" title="点击查看大图"></a>
+            <div class="btn-box">
+                <a class="said-btn said-btn-default" target="_blank" href="javascript:;" id="pre-btn">查看原图</a>
+            </div>
+        </div>
+    </div>
     <script>
         $(function () {
             var $nav = $('#a-nav'),
@@ -674,6 +682,31 @@ o.say(); <span class="hljs-comment">//this is sub</span>
                     $nav.addClass('fixed');
                 } else
                     $nav.removeClass('fixed');
+            });
+
+
+            //预览
+            var $imgs = $('#blog-context').find('img'),
+                $body = $('html,body'),
+                $imgLinks = $('#pre-link,#pre-btn'),
+                $preImg = $('#pre-img'),
+                $pre = $('#previewImg');
+            
+            $imgs.each(function (_, img) {
+                var $img = $(img), src = $img.attr('src');
+                $img.on('click', function () {
+                    $body.addClass('lock');
+                    $preImg.attr('src', src);
+                    $imgLinks.attr('href', src);
+                    $pre.css('display', 'flex');
+                });
+            });
+            $imgLinks.on('click', function (e) {
+                e.stopPropagation();
+            });
+            $pre.on('click', function () {
+                $body.removeClass('lock');
+                $pre.css('display', 'none');
             });
         });
 
