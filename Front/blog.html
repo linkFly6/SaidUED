@@ -78,9 +78,11 @@
                                         </ul>
                                     </blockquote>
 
-                                    <h2 id="promise">Promise应对的问题</h2>
-
-                                    <p>JavaScript充斥着Callback，例如下面的代码：</p>
+                                    <h2 id="promise">
+                                        <!--<a class="hash" href="javascript:;" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>-->
+                                        <a class="fa fa-link hash" aria-hidden="true" href="javascript:;" title="hash定位到这里"></a>Promise应对的问题
+                                    </h2>
+                                    <p>JavaScript充斥着Callback，例如下面的代码 (<kbd>⌘</kbd>+<kbd>S</kbd> or <kbd>Ctrl</kbd>+<kbd>S</kbd>)：</p>
 
                                     <pre class="highlight highlight-source"><code class"javascript="" hljs"=""><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Super</span>(<span class="hljs-params"></span>)</span>{
                                     <span class="hljs-keyword">this</span>.name = <span class="hljs-string">"this is super"</span>;<span class="hljs-comment">//这时候Super.prototype.constructor就已经指向Object了//这时候Super.prototype.constructor就已经指向Object了//这时候Super.prototype.constructor就已经指向Object了//这时候Super.prototype.constructor就已经指向Object了//这时候Super.prototype.constructor就已经指向Object了</span>
@@ -138,7 +140,7 @@ o.say(); <span class="hljs-comment">//this is sub</span>
 
                                     <p>异步操作有点类似这一段代码被挂起，先执行后续的代码，直到异步得到响应（例如setTimeout要求的1s之后执行，ajax的服务器响应），这一段异步的代码才会执行。关于这一段异步代码的执行流程，请参阅JavaScript大名鼎鼎的：<a href="http://www.ruanyifeng.com/blog/2013/10/event_loop.html">Event Loop（事件轮询）</a>。</p>
 
-                                    <h2 id="promise">Promise的解决</h2>
+                                    <h2 id="promise"><i class="fa fa-link" aria-hidden="true"></i>Promise的解决</h2>
 
                                     <p>Promise优雅的修正了异步代码，我们使用Promise重写我们setTimeout的示例：</p>
 
@@ -691,7 +693,7 @@ o.say(); <span class="hljs-comment">//this is sub</span>
                 $imgLinks = $('#pre-link,#pre-btn'),
                 $preImg = $('#pre-img'),
                 $pre = $('#previewImg');
-            
+
             $imgs.each(function (_, img) {
                 var $img = $(img), src = $img.attr('src');
                 $img.on('click', function () {

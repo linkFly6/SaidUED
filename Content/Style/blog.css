@@ -143,8 +143,9 @@ body {
 
 .blog-article {
   position: relative; }
-  .blog-article .html {
-    font: 200 18px/2 "Lantinghei SC","Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif; }
+
+.html {
+  font: 200 18px/2 "Lantinghei SC","Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif; }
 
 .content-bg {
   border-bottom: 1px solid white;
@@ -248,6 +249,22 @@ body {
     /*font-weight: bold;*/
     line-height: 1.4;
     /*font-weight: normal;*/ }
+    .blog-content h1 .hash, .blog-content h2 .hash, .blog-content h3 .hash, .blog-content h4 .hash, .blog-content h5 .hash, .blog-content h6 .hash {
+      font-size: 20px;
+      float: left;
+      margin-left: -24px;
+      color: #8b8b8b;
+      visibility: hidden;
+      padding-right: 5px;
+      /*-moz-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);*/
+      margin-right: 0;
+      line-height: 1em; }
+      .blog-content h1 .hash:hover, .blog-content h2 .hash:hover, .blog-content h3 .hash:hover, .blog-content h4 .hash:hover, .blog-content h5 .hash:hover, .blog-content h6 .hash:hover {
+        text-decoration: none; }
   .blog-content hr {
     margin: 20px 0; }
   .blog-content h1 {
@@ -255,36 +272,69 @@ body {
     font-size: 2em;
     line-height: 1.2;
     border-bottom: 1px solid #eee; }
+    .blog-content h1 .hash {
+      line-height: 2.2em; }
   .blog-content h2 {
     padding-bottom: 0.3em;
     font-size: 1.75em;
     line-height: 1.225;
     border-bottom: 1px solid #eee; }
+    .blog-content h2 .hash {
+      line-height: 1.9em; }
   .blog-content h3 {
     font-size: 1.5em;
     line-height: 1.43; }
+    .blog-content h3 .hash {
+      line-height: 1.9em; }
   .blog-content h4 {
     font-size: 1.25em; }
+    .blog-content h4 .hash {
+      line-height: 1.5em; }
   .blog-content h5 {
     font-size: 1em; }
+    .blog-content h5 .hash {
+      line-height: 1.4em;
+      font-size: 18px; }
   .blog-content h6 {
     font-size: 1em;
     color: #777; }
+    .blog-content h6 .hash {
+      line-height: 1.5em;
+      font-size: 16px; }
   .blog-content blockquote {
     padding: 15px 15px;
     color: #777;
     background-color: #f8f8f8;
     border-left: 4px solid #56a1d6; }
+    .blog-content blockquote ul, .blog-content blockquote ol {
+      margin-bottom: 0; }
     .blog-content blockquote p:last-child {
       margin-bottom: 0; }
+  .blog-content kbd {
+    display: inline-block;
+    margin: -3px .1em 0;
+    padding: .1em .6em;
+    font-size: 11px;
+    line-height: 1.4;
+    color: #242729;
+    text-shadow: 0 1px 0 #FFF;
+    background-color: #e1e3e5;
+    border: 1px solid #adb3b9;
+    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(12, 13, 14, 0.2), 0 0 0 2px #FFF inset;
+    white-space: nowrap;
+    vertical-align: middle; }
   .blog-content ul {
     padding-left: 1em; }
     .blog-content ul li {
-      list-style: disc; }
+      list-style: disc;
+      padding: 3px 0; }
   .blog-content ol {
     padding-left: 1em; }
     .blog-content ol li {
-      list-style: decimal; }
+      list-style: decimal;
+      padding: 3px 0; }
   .blog-content p, .blog-content ul, .blog-content ol, .blog-content dl, .blog-content table, .blog-content pre, .blog-content blockquote {
     margin-top: 0;
     margin-bottom: 16px; }
