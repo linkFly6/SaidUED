@@ -265,6 +265,8 @@ body {
       line-height: 1em; }
       .blog-content h1 .hash:hover, .blog-content h2 .hash:hover, .blog-content h3 .hash:hover, .blog-content h4 .hash:hover, .blog-content h5 .hash:hover, .blog-content h6 .hash:hover {
         text-decoration: none; }
+    .blog-content h1:hover .hash, .blog-content h2:hover .hash, .blog-content h3:hover .hash, .blog-content h4:hover .hash, .blog-content h5:hover .hash, .blog-content h6:hover .hash {
+      visibility: visible; }
   .blog-content hr {
     margin: 20px 0; }
   .blog-content h1 {
