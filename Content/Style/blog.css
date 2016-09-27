@@ -91,9 +91,10 @@ body {
     width: 50%;
     position: relative; }
   .center a {
-    color: #4078c0; }
-    .center a:hover, .center a:active {
-      text-decoration: underline; }
+    color: #4078c0;
+    /*&:hover, &:active {
+        text-decoration: underline;
+    }*/ }
 
 .nav {
   width: 255px;
@@ -143,6 +144,24 @@ body {
 
 .blog-article {
   position: relative; }
+  .blog-article a {
+    position: relative; }
+    .blog-article a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      display: block;
+      bottom: -5px;
+      width: 100%;
+      height: 1px;
+      background-color: currentColor;
+      transform: scale(0);
+      transition: transform 0.5s;
+      -webkit-transform: scale(0);
+      -webkit-transition: transform 0.5s; }
+    .blog-article a:hover::after {
+      transform: scale(1);
+      -webkit-transform: scale(1); }
 
 .html {
   font: 200 18px/2 "Lantinghei SC","Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif; }
@@ -263,6 +282,8 @@ body {
       transform: rotate(-45deg);*/
       margin-right: 0;
       line-height: 1em; }
+      .blog-content h1 .hash::after, .blog-content h2 .hash::after, .blog-content h3 .hash::after, .blog-content h4 .hash::after, .blog-content h5 .hash::after, .blog-content h6 .hash::after {
+        display: none; }
       .blog-content h1 .hash:hover, .blog-content h2 .hash:hover, .blog-content h3 .hash:hover, .blog-content h4 .hash:hover, .blog-content h5 .hash:hover, .blog-content h6 .hash:hover {
         text-decoration: none; }
     .blog-content h1:hover .hash, .blog-content h2:hover .hash, .blog-content h3:hover .hash, .blog-content h4:hover .hash, .blog-content h5:hover .hash, .blog-content h6:hover .hash {
